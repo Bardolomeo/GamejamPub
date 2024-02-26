@@ -1,0 +1,56 @@
+{
+    "Ch1": {
+      "classe": "The Claw",
+      "vita": "70",
+      "velocità": "0.5",
+      "attacco base": "20"
+    },
+    "Ch2": {
+      "classe": "The Morphed",
+      "vita": "120",
+      "velocità": "0.4",
+      "attacco base": "25"
+    },
+    "Ch3": {
+      "classe": "The Mistique",
+      "vita": "60",
+      "velocità": "0.6",
+      "attacco base": "15"
+    },
+    "Ch4": {
+      "classe": "The Armless",
+      "vita": "40",
+      "velocità": "0.4",
+      "attacco base": "10"
+    },
+     "Ch5": {
+      "classe": "The Stinger",
+      "vita": "60",
+      "velocità": "0.6",
+      "attacco base": "15"
+    },
+     "Ch6": {
+      "classe": "The Holed",
+      "vita": "100",
+      "velocità": "0.4",
+      "attacco base": "10"
+    },
+      "Ch7": {
+      "classe": "The Blade",
+      "vita": "40",
+      "velocità": "0.7",
+      "attacco base": "25"
+    },
+     "Ch8": {
+      "classe": "The Frost",
+      "vita": "40",
+      "velocità": "0.5",
+      "attacco base": "30"
+    },
+    "Ch9": {
+      "classe": "The Spore",
+      "vita": "60",
+      "velocità": "0.5",
+      "attacco base": "10"
+    }
+}

@@ -1,0 +1,114 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BaseSkill",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Skills/Res_ref_skill.gd"
+}, {
+"base": "Node",
+"class": "CharacterStats",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Stats_node.gd"
+}, {
+"base": "SkillsNode",
+"class": "DoSkillNode",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Skills Scenes/DoSkill_node.gd"
+}, {
+"base": "Node",
+"class": "Job",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Job.gd"
+}, {
+"base": "Node",
+"class": "SkillsNode",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Skills_node.gd"
+}, {
+"base": "Resource",
+"class": "StartingStats",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Classes/Starting stats/starting_stats.gd"
+}, {
+"base": "StartingStats",
+"class": "StartingStatsEnemies",
+"language": "GDScript",
+"path": "res://export_combat/Characters/Enemies/Stats/starting_stats_enemies.gd"
+}, {
+"base": "Node2D",
+"class": "TurnOrder",
+"language": "GDScript",
+"path": "res://export_combat/turn_order.gd"
+}, {
+"base": "Node2D",
+"class": "WinLose",
+"language": "GDScript",
+"path": "res://export_combat/winorlose.gd"
+} ]
+_global_script_class_icons={
+"BaseSkill": "",
+"CharacterStats": "",
+"DoSkillNode": "",
+"Job": "",
+"SkillsNode": "",
+"StartingStats": "",
+"StartingStatsEnemies": "",
+"TurnOrder": "",
+"WinLose": ""
+}
+
+[application]
+
+config/name="Gamejam"
+run/main_scene="res://Intro.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+TrinketsData="*res://SingleScripts/TrinketsData.gd"
+EventData="*res://SingleScripts/EventData.gd"
+CharactersData="*res://SingleScripts/CharactersData.gd"
+GlobalVar="*res://SingleScripts/GlobalVar.gd"
+SkillsData="*res://SingleScripts/SkillsData.gd"
+SquadData="*res://SingleScripts/SquadData.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+Pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Fullscreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Starting stats/starting_stats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hp_max = 0
+speed = 0.0
+gold = 0
+job = ""
+is_enemy = false
+multiplier = 1.0

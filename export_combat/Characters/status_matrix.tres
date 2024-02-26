@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/EffectsNode.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+paralysis = 0
+bleed = 0
+weak = 0
+slow = 0
+haste = 0
+regen = 0
+guard = 0

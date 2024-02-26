@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Fonts/OldWizard.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/BetterPixels.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Inventory.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 58
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Inventory" type="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 720.0
+margin_top = -308.0
+margin_right = 1296.0
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 30.0
+margin_right = -15.0
+margin_bottom = -15.0
+rect_scale = Vector2( 1.00706, 1 )
+custom_constants/separation = 10
+
+[node name="Trinkets" type="Label" parent="VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 59.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 1 )
+text = "Trinkets"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 69.0
+margin_right = 546.0
+margin_bottom = 263.0
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 546.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 20
+custom_constants/hseparation = 28
+columns = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 625.0
+margin_top = 58.0
+margin_right = 1110.0
+margin_bottom = 255.0
+
+[node name="itemName" type="Label" parent="VBoxContainer2"]
+margin_top = 18.0
+margin_right = 485.0
+margin_bottom = 78.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+
+[node name="itemDesc" type="Label" parent="VBoxContainer2"]
+margin_top = 100.0
+margin_right = 485.0
+margin_bottom = 197.0
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 3 )

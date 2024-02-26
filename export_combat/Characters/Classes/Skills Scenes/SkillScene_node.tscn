@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Skills_node.gd" type="Script" id=1]
+
+[node name="SkillScene" type="Node"]
+script = ExtResource( 1 )

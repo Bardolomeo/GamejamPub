@@ -1,0 +1,424 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Claw.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Mistique.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Holed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Armless.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Stinger.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Morphed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/OldWizard.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://CharSelect.gd" type="Script" id=8]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/CharSelectBG.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Blade .png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Spore.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Frost.png" type="Texture" id=13]
+[ext_resource path="res://Assets/borderportrait.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 5
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 160, 160 )
+modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 160, 160 )
+margin_top = 14.3197
+
+[sub_resource type="DynamicFont" id=16]
+size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=22]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Black:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Black:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "menu"
+length = 3.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="CharSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -350, 329 )
+texture = ExtResource( 10 )
+offset = Vector2( 1310, 211 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -340.0
+margin_top = -340.0
+margin_right = 340.0
+margin_bottom = 340.0
+custom_constants/vseparation = 100
+custom_constants/hseparation = 100
+columns = 3
+
+[node name="Char1" type="Button" parent="GridContainer"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+rect_pivot_offset = Vector2( 2709, 37 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char1"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 90, 998 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char1"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char 2" type="Button" parent="GridContainer"]
+margin_left = 260.0
+margin_right = 420.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char 2"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char 2"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char 3" type="Button" parent="GridContainer"]
+margin_left = 520.0
+margin_right = 680.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+rect_pivot_offset = Vector2( 1683, -56 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char 3"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char 3"]
+position = Vector2( -663, 155 )
+texture = ExtResource( 14 )
+offset = Vector2( 743, -75 )
+
+[node name="Char 4" type="Button" parent="GridContainer"]
+margin_top = 260.0
+margin_right = 160.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char 4"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char 4"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char5" type="Button" parent="GridContainer"]
+margin_left = 260.0
+margin_top = 260.0
+margin_right = 420.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char5"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char5"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char6" type="Button" parent="GridContainer"]
+margin_left = 520.0
+margin_top = 260.0
+margin_right = 680.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char6"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( -1171, -171 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char6"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char7" type="Button" parent="GridContainer"]
+margin_top = 520.0
+margin_right = 160.0
+margin_bottom = 680.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char7"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char7"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char8" type="Button" parent="GridContainer"]
+margin_left = 260.0
+margin_top = 520.0
+margin_right = 420.0
+margin_bottom = 680.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char8"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char8"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Char9" type="Button" parent="GridContainer"]
+margin_left = 520.0
+margin_top = 520.0
+margin_right = 680.0
+margin_bottom = 680.0
+rect_min_size = Vector2( 160, 160 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="GridContainer/Char9"]
+visible = false
+margin_right = 160.0
+margin_bottom = 160.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char9"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -311.0
+margin_top = 50.0
+margin_right = 311.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 16 )
+text = "Choose your phobia..."
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -357.0
+margin_top = -120.0
+margin_right = 361.0
+margin_bottom = -49.0
+custom_fonts/font = SubResource( 17 )
+text = "...and enter the unknown"
+
+[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Black" type="ColorRect" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/RESET = SubResource( 22 )
+anims/fade = SubResource( 23 )
+anims/menu = SubResource( 24 )
+
+[connection signal="pressed" from="GridContainer/Char1" to="." method="_on_Char1_pressed"]
+[connection signal="pressed" from="GridContainer/Char 2" to="." method="_on_Char_2_pressed"]
+[connection signal="pressed" from="GridContainer/Char 3" to="." method="_on_Char_3_pressed"]
+[connection signal="pressed" from="GridContainer/Char 4" to="." method="_on_Char_4_pressed"]
+[connection signal="pressed" from="GridContainer/Char5" to="." method="_on_Char5_pressed"]
+[connection signal="pressed" from="GridContainer/Char6" to="." method="_on_Char6_pressed"]
+[connection signal="pressed" from="GridContainer/Char7" to="." method="_on_Char7_pressed"]
+[connection signal="pressed" from="GridContainer/Char8" to="." method="_on_Char8_pressed"]
+[connection signal="pressed" from="GridContainer/Char9" to="." method="_on_Char9_pressed"]

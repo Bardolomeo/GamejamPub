@@ -1,0 +1,210 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/OldWizard.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://export_combat/Misc/winscreen.gd" type="Script" id=3]
+[ext_resource path="res://Assets/BetterPixels.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Assets/Fonts/OldWizard.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+font_data = SubResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Appear"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("winorlose:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 0.305882 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Loot:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Gold_value:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Gold_letter:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("winorlose:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Loot:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Gold_value:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Gold_letter:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+font_data = SubResource( 8 )
+
+[node name="winscreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="winorlose" type="Label" parent="."]
+margin_left = 640.0
+margin_top = 459.0
+margin_right = 1280.0
+margin_bottom = 622.0
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_fonts/font = SubResource( 7 )
+text = "You Win!"
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Appear = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Loot" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = -1.546
+margin_left = 830.0
+margin_top = 630.0
+margin_right = 940.0
+margin_bottom = 680.0
+custom_fonts/font = SubResource( 4 )
+text = "Loot:"
+
+[node name="Gold_value" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = -1.546
+margin_left = 945.0
+margin_top = 630.0
+margin_right = 975.0
+margin_bottom = 680.0
+custom_colors/font_color = Color( 0.831373, 0.686275, 0.215686, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="Gold_letter" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = -1.546
+margin_left = 1012.0
+margin_top = 629.0
+margin_right = 1120.0
+margin_bottom = 680.0
+custom_colors/font_color = Color( 0.831373, 0.686275, 0.215686, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "$"
+
+[node name="Label" type="Label" parent="."]
+margin_right = 844.0
+margin_bottom = 431.0
+custom_fonts/font = SubResource( 9 )
+text = "dgskfgqwrgWR"

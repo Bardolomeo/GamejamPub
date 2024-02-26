@@ -1,0 +1,272 @@
+{
+  "0": {
+    "scenario": "You see a fork in the road. The road on the right is flanked by buildings and seems deserted. On the left it widens into a plaza, and you can clearly hear loud noises coming from that direction.",
+    "choices": {
+      "A": {
+        "desc": "Go to the right",
+        "result": "The road to the right ends in a massive sinkhole, so you're forced to proceed through a side alley. Not even halfway through, monstruous figures block both exits. Trapped, you prepare to fight.",
+        "outcome": "fight_start"
+      },
+      "B": {
+        "desc":"Go to the left",
+        "result": "Gathering your courage, you enter the plaza. It's in a clear state of disrepair, with a huge broken statue in the middle. Associating the sounds to some collapsing debris, you proceed onwards.",
+        "outcome": "none"
+      }
+    }
+  },
+  "1": {
+    "scenario": "At the end of the road you spot the silhouette of what looks like a man facing away from you, still as a statue. You stop and watch for a while, but it remains unnaturally motionless.",
+    "choices": {
+      "A": {
+        "desc": "Get closer",
+        "result": "You wearily approach the figure, which you can confirm is indeed a man. He stares forward with lifeless eyes, oblivious to everything around him. Failing to get his attention, you nervously leave.",
+        "outcome": "none"
+      },
+      "B": {
+        "desc":"Call out",
+        "result": "You shout at the figure to get its attention, your voice echoing along the street. The only response you hear is the sound of something rushing down the road in your direction, attracted by the noise.",
+        "outcome": "fight_start"
+      }
+    }
+  },
+  "2": {
+    "scenario": "The road you're on seems endless, disappearing beyond the horizon. As you're wondering how much further you have to go, you hear someone calling out for help from a nearby building.",
+    "choices": {
+      "A": {
+        "desc": "Enter the building",
+        "result": "You pass through a gate and into a courtyard filled with corpses. Twisted creatures wander among them, their last vestiges of humanity compelling them to cry for help - until they see you.",
+        "outcome": "fight_start"
+      },
+      "B": {
+        "desc":"Keep going",
+        "result": "The road ahead is long and you'll need all your strength. You ignore the voices and hasten your step.",
+        "outcome": "none"
+      }
+    }
+  },
+  "3": {
+    "scenario": "You spot a mob of robed figures reciting incantations, as a sobbing prisoner stands tied to a nearby statue. You lock eyes for a moment, and with tears streaming down their face they motion at you to leave.",
+    "choices": {
+      "A": {
+        "desc": "Follow their advice",
+        "result": "Alerting the cultists is too great a risk, so you begrudgingly nod to the prisoner in response. Skimming the sides of the road you manage to move past the site of the rite unharmed.",
+        "outcome": "none"
+      },
+      "B": {
+        "desc":"Try to save them",
+        "result": "You quietly approach the statue and attempt to cut the ropes, but the bindings magically reform. The prisoner repeats their gesture, murmuring a healing blessing in thanks as you are forced to sneak away.",
+        "outcome": "small_heal"
+      }
+    }
+  },
+  "4": {
+    "scenario": "You arrive at a plaza housing a great temple, unusually in pristine state. You feel enchanted by the exquisite decorations and statues adorning its facade, until you hear a voice beckoning you in.",
+    "choices": {
+      "A": {
+        "desc": "Ignore it",
+        "result": "It might be a sanctuary, but it might also be a trap. Deciding to err on the side of caution, you walk around the temple and continue on your way.",
+        "outcome": "none"
+      },
+      "B": {
+        "desc":"Enter the temple",
+        "result": "You immediately notice a golden charm sitting on the main altar. The voice compels you to take it, turning into a shriek as soon as your fingers touch it. Ears ringing, you feel something approach.",
+        "outcome": "fight_start_party_weak"
+      }
+    }
+  },
+  "5": {
+    "scenario": "You come upon a statue of a hooded woman, standing amid the ruins. Maybe it's the grim surroundings, but you can't help but feel a strange melancholy while looking at it.",
+    "choices": {
+      "A": {
+        "desc": "Ignore it",
+        "result": "You stand in quiet contemplation for a moment, reflecting on what brought you here and the road ahead. Finally you take one last look at the statue and resume your journey.",
+        "outcome": "none"
+      },
+      "B": {
+        "desc":"Approach the statue",
+        "result": "As you get closer, your amulet begins to glow and you start to feel drowsy. Tottering, you fall asleep at the feet of the statue. You awake well rested and notice a wry smile on the statue's lips.",
+        "outcome": "medium_heal"
+      }
+    }
+  },
+  "6": {
+    "scenario": "Mist floods the road and a low droning noise fills your ears, like murmurs of an ancient language. Blurry entities emerge from the fog, staring at you unblinking, as your amulet burns in your pocket.",
+    "choices": {
+      "A": {
+        "desc": "Grab your amulet",
+        "result": "The amulet almost scalds your hands, glowing brilliantly. Suddenly the murmurs become comprehensible, and they make it clear you're not welcome. As the entities disappear, you feel exhausted.",
+        "outcome": "party_weak"
+      },
+      "B": {
+        "desc":"Soldier on",
+        "result": "You put your hand on your pocket, as if to protect your amulet, and keep walking ahead with your head down. The entities part to let you through, and you feel invigorated by the power of the amulet.",
+        "outcome": "enemy_weak"
+      }
+    }
+  },
+  "7": {
+    "scenario": "A raggedy man sits on the sidewalk, staring and cackling at you. He seems harmless enough, but as you walk by he jumps in front of you with a vial in each hand. It's clear he wants you to take one.",
+    "choices": {
+      "A": {
+        "desc": "Drink the blue one",
+        "result": "Your vision becomes blurry and you end up passing out on the side of the road. You wake up on a different - but familiar - street, surprisingly well rested. Did that weird man just drag you back?",
+        "outcome" : "stage_2_longer_plus_medium_heal"
+      },
+      "B": {
+        "desc": "Drink the red one",
+        "result": "You feel in contrast with yourself: happy and sad, healthy and ill, all at the same time. In the end you throw up on the side of the road, while the raggedy man runs away cackling like a madman.",
+        "outcome": "party_poison_plus_party_fullpp"
+      }
+    }
+  },
+  "8": {
+    "scenario": "A blocked road forces you to pass through a building, where you find a man huddled in front of a makeshift altar. He's unresponsive, but a chilling voice emanating from the altar demands blood.",
+    "choices": {
+      "A": {
+        "desc": "Give your blood",
+        "result": "You cut your palm and let the blood drip on the altar, but the voice demands more. Tendrils of shadow shoot out from the ground, tearing the huddled man apart, before morphing into twisted creatures.",
+        "outcome": "fight_start_party_poison"
+      },
+      "B": {
+        "desc":"Refuse",
+        "result": "The voice hisses, dissipating into nothingness. For a second you think it's over - until a black portal appears in place of the altar, pulling the huddled man inside. Slowly, something emerges from it...",
+        "outcome": "fight_start"
+      }
+    }
+  },
+  "9": {
+    "scenario": "You find the aftermath of a battle, with bodies strewn all over. Whatever did this is coming back, stumbling towards you in the distance. The only other way out is through destroyed buildings.",
+    "choices": {
+      "A": {
+        "desc": "Set ambush",
+        "result": "Hoping to gain an advantage, you hide behind a partially collapsed wall. Waiting for the right moment you push the unstable wall over, crashing it on top of the creatures. Time to attack!",
+        "outcome": "fight_start_enemy_stun"
+      },
+      "B": {
+        "desc":"Escape",
+        "result": "You flee through the ruins on the sides of the road, but the crossing is treacherous. You cut yourself passing through broken windows and get hit by falling debris, but you make it on the other side.",
+        "outcome": "medium_hurt"
+      }
+    }
+  },
+  "10": {
+    "scenario": "You find a staircase beside the road that leads to a temple. At the entrance of the temple, you see statues that appear older than the city itself, and on the steps, there are bodies not yet transformed.",
+    "choices": {
+      "A":{
+        "desc":"Enter the temple",
+        "result":"You enter the temple to take a look around. The structure is very old and dilapidated, and inside, you see an altar with an idol on top. It emits a strange aura and you decide to take it with you.",
+        "outcome":"regen_stone"
+      },
+      "B": {
+        "desc":"Do not enter",
+        "result":"You decide not to take any risks and continue along the road.",
+        "outcome":"none"
+      }
+    }
+  },
+  "11": {
+    "scenario":"While passing through an alley, you hear a noise, as if someone or something is hiding in the darkness. You hear someone complaining, it's too dark, and you can't quite make out their appearance.",
+    "choices":{
+      "A":{
+        "desc":"Approach the figure",
+        "result":"You approach the figure, it suddenly stands up, starts screaming, and charges at you, pushing you, then it runs away in the opposite direction. You notice that it has stolen an item from your inventory.",
+        "outcome":"lose_trinket"
+      },
+      "B":{
+        "desc":"Avoid approaching",
+        "result":"You keep as far away from the darkness as possible and continue your journey, leaving the alley behind.",
+        "outcome":"none"
+      }
+    }
+  },
+  "12": {
+    "scenario":"You find yourself in a more open area of the city with fewer buildings. In front of you is a wheat field, and further back you can see a house behind the field, with what was probably a barn adjacent to it.",
+    "choices":{
+      "A":{
+        "desc":"Explore the house",
+        "result":"You enter in the house to see if you can find any supplies for the journey. Venturing into the basement, you smell the stench of death, and come face to face with a group of creatures.",
+        "outcome":"fight_start"
+      },
+      "B":{
+        "desc":"Explore the barn",
+        "result":"You decide to explore the barn in search of something useful. There's a small storage area with some cabinets. The only thing you manage to find is a monocle, you decide to keep it.",
+        "outcome":"monocle"
+      }
+    }
+  },
+  "13": {
+    "scenario":"You find yourself in front of a kind of sanctuary. As you approach the sanctuary, you see an inscription on the ground in front of the entrance, but the only things you can read are \"pray\" and \"lost.\"",
+    "choices":{
+      "A":{
+        "desc":"Explore the sanctuary",
+        "result":"You decide to enter the sanctuary to search for something useful. Inside the sanctuary, there's a smaller room with cabinets and a desk. You find some coins in a drawer. There's nothing else useful.",
+        "outcome":"gold_gain20"
+      },
+      "B":{
+        "desc":"Enter and pray",
+        "result":"Upon entering the sanctuary. Moved by the situation and after making sure it was safe, you approach a statue at the back of the room and pray. You feel that the prayer has been answered.",
+        "outcome":"one_member_full_heal"
+      }
+    }
+  },
+  "14":{
+    "scenario":"You find yourself crossing a road with a sticky substance on the ground. You see a large building that spans a good portion of the street, it could be a good way to avoid this dangerous stretch of road.",
+    "choices":{
+      "A":{
+        "desc":"Take the risk",
+        "result":"You decide to take the risk and proceed through the slime. You manage to pass beyond the tentacles, but there's a group of creatures wandering just after the slime. You prepare to fight.",
+        "outcome":"fight_start_party_slow"
+      },
+      "B":{
+        "desc":"Enter the building",
+        "result":"As you noticed it extends for quite a distance and allows you to bypass all the slime. Upon exiting the building, you find yourself facing a group of creatures that immediately run toward you.",
+        "outcome":"fight_start"
+      }
+    }
+  },
+  "15":{
+    "scenario":"As you continue your journey, you find yourself in a part of the city almost completely destroyed, full of debris. As you make your way through the debris, you notice a group of creatures following you.",
+    "choices":{
+      "A":{
+        "desc":"Confront them",
+        "result":"Since it's difficult to move in this area, you decide to confront them and then proceed more calmly to avoid unnecessary risks.",
+        "outcome":"fight_start"
+      },
+      "B":{
+        "desc":"Run away",
+        "result":"You decide to flee, hoping to save resources that might come in handy later. You manage to shake them off, but during the run among the rubble, you get injured.",
+        "outcome":"party_poison"
+      }
+    }
+  },
+  "16":{
+    "scenario":"As you continue your journey, you find on the ground what appears to be an idol emitting an aura and a distorted sound. There's no one around, and you don't know how it ended up there.",
+    "choices":{
+      "A":{
+        "desc":"Take the idol",
+        "result":"You decide to take the idol but as soon as you touch it emits a kind of repulsion that pushes you away, and it falls to the ground. You feel dazed and weakened.",
+        "outcome":"drain_pp_plus_party_weak"
+      },
+      "B":{
+        "desc":"Leave it alone",
+        "result":"You don't think it could be useful and believe it might even turn against you, so you decide to leave it on the ground and continue your journey.",
+        "outcome":"none"
+      }
+    }
+  },
+  "17":{
+    "scenario":"You find yourself in front of an imposing building and decide to explore it. Upon entering, you discover that it is some sort of archive or library, but you are not alone; there are creatures inside.",
+    "choices":{
+      "A":{
+        "desc":"Take the risk",
+        "result":"You decide to take this risk. You proceed cautiously without attracting attention and find a tome that looks very weathered and decide to take it, but some creatures have noticed you and are approaching.",
+        "outcome":"old_tome_plus_fight_start"
+      },
+      "B":{
+        "desc":"Leave the building",
+        "result":"Judging from what you see, it doesn't seem worth taking this risk. You decide to leave and continue your journey.",
+        "outcome":"none"
+      }
+    }
+  }
+}

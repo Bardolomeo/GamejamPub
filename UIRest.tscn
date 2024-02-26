@@ -1,0 +1,217 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/OldWizard.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/fountainpng1.png" type="Texture" id=2]
+[ext_resource path="res://UIRest.gd" type="Script" id=3]
+[ext_resource path="res://Assets/borderbox.png" type="Texture" id=4]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/RestBG2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/RestBG1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/fountainpng2.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://Assets/BetterPixels.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 10 )
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("fountain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "fountain"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fountain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="UIRest" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -399, 122 )
+mouse_filter = 1
+script = ExtResource( 3 )
+
+[node name="bg1" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 7 )
+
+[node name="fountain" type="AnimatedSprite" parent="."]
+position = Vector2( 660, 1797 )
+frames = SubResource( 12 )
+offset = Vector2( 300, -1257 )
+
+[node name="bg2" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.415686 )
+position = Vector2( 960, 540 )
+texture = ExtResource( 6 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 696.0
+custom_constants/separation = 70
+
+[node name="InputWindow" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 656.0
+margin_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.55
+custom_constants/margin_right = 9
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="HBoxContainer/InputWindow"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 25.0
+margin_right = 647.0
+margin_bottom = 364.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InputWindow"]
+margin_left = 25.0
+margin_right = 647.0
+margin_bottom = 364.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Rested" type="Label" parent="HBoxContainer/InputWindow"]
+margin_left = 25.0
+margin_top = 109.0
+margin_right = 647.0
+margin_bottom = 254.0
+custom_fonts/font = SubResource( 11 )
+text = "You feel
+at ease."
+align = 1
+
+[node name="TextWindow" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 726.0
+margin_right = 1920.0
+margin_bottom = 384.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 32
+custom_constants/margin_left = -9
+custom_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="HBoxContainer/TextWindow"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = -9.0
+margin_right = 1162.0
+margin_bottom = 364.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/TextWindow"]
+margin_left = -9.0
+margin_right = 1162.0
+margin_bottom = 364.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TextWindow/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1151.0
+margin_bottom = 344.0
+rect_pivot_offset = Vector2( -177, -627 )
+
+[node name="LineStart" type="Label" parent="HBoxContainer/TextWindow/MarginContainer/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 16, 0 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+text = "#"
+
+[node name="Label" type="Label" parent="HBoxContainer/TextWindow/MarginContainer/HBoxContainer"]
+margin_left = 39.0
+margin_right = 1092.0
+margin_bottom = 324.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Text here"
+autowrap = true
+clip_text = true
+
+[node name="LineEnd" type="Label" parent="HBoxContainer/TextWindow/MarginContainer/HBoxContainer"]
+margin_left = 1096.0
+margin_top = 268.0
+margin_right = 1131.0
+margin_bottom = 324.0
+rect_pivot_offset = Vector2( 628, -90 )
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 3 )
+text = "#"
+
+[node name="Border" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 4 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 13 )
+anims/fountain = SubResource( 14 )
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
