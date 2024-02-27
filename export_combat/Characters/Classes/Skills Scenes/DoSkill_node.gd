@@ -2,7 +2,8 @@ extends SkillsNode
 
 class_name DoSkillNode
 
-signal turn_done
+signal round_end
+
 var sk_value : Array
 	
 func _ready():
@@ -32,8 +33,6 @@ func find_skill(name : String, is_enemy : bool) :
 		execute(skill, targets, sk_value)
 
 func select_target(skill, is_enemy):
-#	if $"../../../winscreen/winlose".check_combat_over():
-#		return [null]
 	var targets : Array
 	var not_end : bool
 	match skill.target:
@@ -162,7 +161,7 @@ func execute(skill : SkillsNode, targets : Array, sk_value : Array):
 		if $"..".stats.is_enemy :
 			enemy_blink_blue($"..")
 	skill_range(skill)
-	skill_target(skill, targets)
+	skill_target(skill, targets, sk_value)
 	
 func post_wait_execute(skill, targets, sk_value):
 	if skill.usage > 0 :
@@ -171,6 +170,7 @@ func post_wait_execute(skill, targets, sk_value):
 	for n in $"../Skills".get_children():
 		n.damage = sk_value[i]
 		i += 1
+	$"/root/CombatContainer/Combat/TurnNext"._on_Button_turn_next()
 
 func is_multiattack(skill : SkillsNode, targets : Array):
 	var hit_or_miss : float
@@ -332,7 +332,6 @@ func add_button_single(n : Job, skill : SkillsNode):
 	button.self_modulate = Color(1,1,1,0)
 	var ret = [n]
 	button.connect("pressed", self, "execute", [skill, ret, sk_value])
-	button.connect("pressed", get_tree().root.get_node("CombatContainer/Combat"), "_on_Button_turn_next")
 	return (button)
 
 func add_button_aoe(n : Job, targets : Array, skill : SkillsNode):
@@ -342,7 +341,7 @@ func add_button_aoe(n : Job, targets : Array, skill : SkillsNode):
 	button.rect_position = Vector2(-64, -64)
 	button.self_modulate = Color(1,1,1,0)
 	button.connect("pressed", self, "execute", [skill, targets, sk_value])
-	button.connect("pressed", get_tree().root.get_node("CombatContainer/Combat"), "_on_Button_turn_next")
+#	button.connect("pressed", get_tree().root.get_node("CombatContainer/Combat/TurnNext"), "_on_Button_turn_next")
 	return (button)
 
 func enemy_blink_red(enemy : Job):
@@ -432,7 +431,7 @@ func skill_range(skill):
 #		yield(get_tree().create_timer(0.8), "timeout")
 #		_disable_commands()
 
-func skill_target(skill, targets):
+func skill_target(skill, targets, skvalue):
 	if skill.target == "single" || skill.target == "aoe":
 		is_single_or_aoe(skill, targets)
 	elif skill.target == "multiattack":
@@ -443,5 +442,5 @@ func skill_target(skill, targets):
 		is_single_or_aoe_wsbuff(skill, targets)
 	elif skill.target == "single_wtb" || skill.target == "aoe_wtb":
 		is_single_or_aoe_wtbuff(skill, targets)
-	$"/root/CombatContainer".custom_timer(0.6, self, "post_wait_execute")
+	post_wait_execute(skill, targets, sk_value)
 	

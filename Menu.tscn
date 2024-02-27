@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Assets/BetterPixels.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
-[ext_resource path="res://Assets/IMG_5307.png" type="Texture" id=3]
+[ext_resource path="res://export_combat/Gui/Assets/IMG_5307.png" type="Texture" id=3]
 [ext_resource path="res://Assets/OldWizard.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/CityFlooded2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/CityFlooded1.png" type="Texture" id=6]
+
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {

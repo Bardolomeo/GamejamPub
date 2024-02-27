@@ -9,7 +9,10 @@ onready var line_end = $HBoxContainer/TextWindow/MarginContainer/HBoxContainer/L
 onready var pause_menu = $PauseMenu
 var paused = false
 
+
 func _ready():
+	if GlobalVar.day == 1:
+		self.self_modulate = Color.darkslateblue
 	line_start.text = ""
 	label.text = ("It's " + 
 				 $"/root/CombatContainer/Combat/Turn Order".active.stats.job

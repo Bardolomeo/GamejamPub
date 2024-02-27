@@ -16,7 +16,7 @@ func _on_press() :
 			 $"../../../../Combat/Turn Order".active.do_skill.find_skill("Attack", false)
 			 $"../../../../Combat/winscreen/winlose".check_combat_over()
 		
-func _on_enemy_selected():
-	connect("turn_next", $"../../../../Combat", "_on_Button_turn_next")
-	emit_signal("turn_next")
+#func _on_enemy_selected():
+#	connect("turn_next", $"../../../../Combat/TurnNext", "_on_Button_turn_next")
+#	emit_signal("turn_next")
 	

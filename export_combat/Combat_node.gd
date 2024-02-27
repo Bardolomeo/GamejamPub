@@ -24,17 +24,17 @@ func _emergency_unlock():
 	"CombatContainer/HBoxContainer/InputWindow/VBoxContainer/Attack").disabled == true):
 		lock_commands(0)
 
-func _on_Button_turn_next():
-	$"Turn Order".active.effects.turn_done = 1
-	$Timer.start()
-#	$"winscreen/winlose".check_combat_over()
-	yield(get_tree().create_timer(0.1), "timeout")
-	$"Turn Order".char_arr.sort_custom($"Turn Order", "speed_compar")
-	if enemy_turn == number_of_enemies($"Turn Order".char_arr):
-		enemy_turn = 0
-		yield(get_tree().create_timer(1), "timeout")
-		lock_commands(0)
-	find_next_char()
+#func _on_Button_turn_next():
+#	$"Turn Order".active.effects.turn_done = 1
+#	$Timer.start()
+##	$"winscreen/winlose".check_combat_over()
+#	yield(get_tree().create_timer(0.1), "timeout")
+#	$"Turn Order".char_arr.sort_custom($"Turn Order", "speed_compar")
+##	if enemy_turn == number_of_enemies($"Turn Order".char_arr):
+##		enemy_turn = 0
+##		yield(get_tree().create_timer(1), "timeout")
+##		lock_commands(0)
+#	find_next_char()
 
 func find_next_char():
 	if $"Turn Order".active.get_node("Arrow") :
@@ -111,9 +111,9 @@ func is_npc(active : Job):
 				_:
 					active.do_skill.find_skill("Attack", true)
 			$winscreen/winlose.check_combat_over()
-			$"/root/CombatContainer".custom_timer(1.5, self, "_on_Button_turn_next")
+			$"/root/CombatContainer".custom_timer(1.5, $TurnNext, "_on_Button_turn_next")
 		else:
-			_on_Button_turn_next()
+			$TurnNext._on_Button_turn_next()
 
 func number_of_enemies(char_arr):
 	var number = 0

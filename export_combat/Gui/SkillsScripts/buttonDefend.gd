@@ -18,7 +18,7 @@ func _on_press():
 			_destroy_buttons(button_array, enemies_array())
 		else:
 			$"/root/CombatContainer".set_effect("guard", null)
-			$"/root/CombatContainer/Combat"._on_Button_turn_next()
+			$"/root/CombatContainer/Combat/TurnNext"._on_Button_turn_next()
 			$"../../../../Combat/winscreen/winlose".check_combat_over()
 	yield(get_tree().create_timer(1), "timeout")
 	$"/root/CombatContainer/Combat".lock_commands(0)
@@ -34,8 +34,9 @@ func set_textbox():
 func enemies_array():
 	var array : Array
 	for n in $"/root/CombatContainer/Combat/Turn Order".char_arr :
-		if n.stats.is_enemy && n.stats.hp > 0:
-			array.append(n)
+		if is_instance_valid(n):
+			if n.stats.is_enemy && n.stats.hp > 0:
+				array.append(n)
 	return array
 	
 func _destroy_buttons(array : Array, enemies : Array):

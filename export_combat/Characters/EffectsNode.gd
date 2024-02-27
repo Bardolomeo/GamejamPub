@@ -31,7 +31,7 @@ func check_stun():
 			$"../AnimatedSprite".self_modulate = Color(1,1,1)
 			$"../AnimatedSprite".play("default")
 			yield(get_tree().create_timer(1), "timeout")
-			$"../../.."._on_Button_turn_next()
+			$"../../../TurnNext"._on_Button_turn_next()
 			return 1
 		return 0
 		
