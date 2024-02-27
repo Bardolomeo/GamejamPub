@@ -114,7 +114,7 @@ skill_scene = ExtResource( 5 )
 position = Vector2( -1.99998, -10 )
 frames = SubResource( 1 )
 animation = "hurt"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Stats" type="Node" parent="."]

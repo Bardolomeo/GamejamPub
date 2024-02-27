@@ -31,6 +31,8 @@ func proceed():
 	get_tree().paused = true
 	yield(get_tree().create_timer(2.5), "timeout")
 	get_tree().paused = false
+	MenuMusic.stop_music()
+	GuiMusic.play_gui_music()
 	get_tree().change_scene(next_scene)
 
 func set_info(character : String):

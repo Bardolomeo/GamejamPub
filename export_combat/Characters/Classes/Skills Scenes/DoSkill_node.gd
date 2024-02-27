@@ -170,6 +170,8 @@ func post_wait_execute(skill, targets, sk_value):
 	for n in $"../Skills".get_children():
 		n.damage = sk_value[i]
 		i += 1
+	if $"/root/CombatContainer/Combat/winscreen/winlose".check_combat_over():
+		return
 	$"/root/CombatContainer/Combat/TurnNext"._on_Button_turn_next()
 
 func is_multiattack(skill : SkillsNode, targets : Array):

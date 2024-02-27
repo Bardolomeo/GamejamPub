@@ -19,7 +19,7 @@ func _on_press():
 		else:
 			$"/root/CombatContainer".set_effect("guard", null)
 			$"/root/CombatContainer/Combat/TurnNext"._on_Button_turn_next()
-			$"../../../../Combat/winscreen/winlose".check_combat_over()
+#			$"../../../../Combat/winscreen/winlose".check_combat_over()
 	yield(get_tree().create_timer(1), "timeout")
 	$"/root/CombatContainer/Combat".lock_commands(0)
 

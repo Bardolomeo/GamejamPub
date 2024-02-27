@@ -16,11 +16,9 @@ func _on_Skill1_pressed():
 
 func _on_Skill2_pressed():
 	execute_skill(2)
-#	descwindow.visible = true
 
 func _on_Skill3_pressed():
 	execute_skill(3)
-#	descwindow.visible = true
 
 func set_skills():
 	for n in 3:

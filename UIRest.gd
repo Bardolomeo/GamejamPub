@@ -9,6 +9,7 @@ onready var choice1 = $HBoxContainer/InputWindow/VBoxContainer/Choice1
 onready var choice2 = $HBoxContainer/InputWindow/VBoxContainer/Choice2
 onready var chosen = $HBoxContainer/InputWindow/ChoiceMade
 onready var anim = $AnimationPlayer
+onready var music = $AudioStreamPlayer
 var paused = false
 var choice_made = false
 var next_scene = "res://Gui.tscn"
@@ -38,7 +39,10 @@ func pause():
 	paused = !paused
 
 func _ready():
+	GuiMusic.stop_music()
+	music.play()
 	full_life()
+	music.play()
 	print("Starting state: ready")
 	anim.play("fountain")
 	hide_textbox()
@@ -82,6 +86,8 @@ func _process(_delta):
 				hide_textbox()
 				textboxes = textboxes + 1
 				if textboxes == 2:
+					music.stop()
+					GuiMusic.play_gui_music()
 					get_tree().change_scene(next_scene)
 
 func queue_content(next_content):

@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 2.0
-damage = 40
+hit_rate = 1.5
+damage = 15
 usage = -1
 max_usage = 0
 _range = "melee"
 target = "single"
-effect = "weak"
+effect = "attack"
 skill_name = "Attack"
 description = ""

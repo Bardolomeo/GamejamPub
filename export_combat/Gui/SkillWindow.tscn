@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://export_combat/Gui/DescWindow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://export_combat/Gui/SkillWindow.gd" type="Script" id=4]
@@ -11,11 +11,19 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 60
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://Assets/OldWizard.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=13]
 size = 60
+font_data = SubResource( 12 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://Assets/BetterPixels.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 60
+font_data = SubResource( 14 )
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://Assets/Fonts/OldWizard.ttf"
@@ -122,17 +130,17 @@ rect_pivot_offset = Vector2( -1264, -445 )
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_colors/font_color_hover = Color( 0.662745, 0.027451, 0.666667, 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 13 )
 text = "Character Skill 1"
 flat = true
 
 [node name="Skill1Des" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer1"]
 margin_left = 547.0
-margin_top = 45.0
+margin_top = 22.0
 margin_right = 1091.0
-margin_bottom = 46.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 15 )
 text = "Skill uses left: 5/5"
 align = 1
 

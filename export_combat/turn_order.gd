@@ -36,6 +36,7 @@ func instance_player_scene(cyc, pg):
 	scene = load("res://export_combat/Characters/Classes/" + job + ".tscn")
 	var pg1 = scene.instance()
 	add_child(pg1)
+	set_char_stats(pg1, pg)
 	if cyc == 0 :
 		pg1.position += Vector2(500, 250)
 	elif cyc == 1 :
@@ -43,6 +44,12 @@ func instance_player_scene(cyc, pg):
 	elif cyc == 2 :
 		pg1.position += Vector2(500, 550)
 	return 1
+
+func set_char_stats(pg1, pg):
+	pg1.stats.hp = CharactersData.ch_data[pg]["vita"]
+	pg1.skill_array[1].usage = SkillsData.skills_data[pg]["Skill1"]["usage"]
+	pg1.skill_array[2].usage = SkillsData.skills_data[pg]["Skill2"]["usage"]
+	pg1.skill_array[3].usage = SkillsData.skills_data[pg]["Skill3"]["usage"]
 
 func speed_compar(a, b):
 	return a.stats.speed * a.stats.speed_mult > b.stats.speed * b.stats.speed_mult

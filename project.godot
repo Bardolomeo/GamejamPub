@@ -80,6 +80,8 @@ CharactersData="*res://SingleScripts/CharactersData.gd"
 GlobalVar="*res://SingleScripts/GlobalVar.gd"
 SkillsData="*res://SingleScripts/SkillsData.gd"
 SquadData="*res://SingleScripts/SquadData.gd"
+MenuMusic="*res://MenuMusic.tscn"
+GuiMusic="*res://GuiMusic.tscn"
 
 [display]
 

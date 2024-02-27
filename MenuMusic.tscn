@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music/ost1.mp3" type="AudioStream" id=1]
+[ext_resource path="res://MenuMusic.gd" type="Script" id=2]
+
+[node name="MenuMusic" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )

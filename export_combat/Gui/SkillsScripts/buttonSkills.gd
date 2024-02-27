@@ -5,6 +5,6 @@ func _ready():
 	connect("pressed", self, "_on_press")
 	
 func _on_press():
-	$"../../../../Combat/winscreen/winlose".check_combat_over()
+#	$"../../../../Combat/winscreen/winlose".check_combat_over()
 	pass
 #		return

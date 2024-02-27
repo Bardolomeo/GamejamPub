@@ -11,6 +11,7 @@ var paused = false
 
 
 func _ready():
+	$Fade.play("fade")
 	if GlobalVar.day == 1:
 		self.self_modulate = Color.darkslateblue
 	line_start.text = ""

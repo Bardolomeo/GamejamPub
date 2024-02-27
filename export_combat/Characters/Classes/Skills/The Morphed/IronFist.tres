@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 0.7
-damage = 10
-usage = 1
-max_usage = 1
+hit_rate = 0.9
+damage = 20
+usage = 3
+max_usage = 3
 _range = "melee"
-target = "aoe"
-effect = "slow"
-skill_name = "Disdain"
-description = "Lorem Ipsum"
+target = "single_wsb"
+effect = "guard"
+skill_name = "Iron Fist"
+description = "Damage an enemy and set defense on himself"

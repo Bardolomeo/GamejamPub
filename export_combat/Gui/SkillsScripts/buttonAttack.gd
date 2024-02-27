@@ -14,7 +14,7 @@ func _on_press() :
 			return
 		elif $"/root/CombatContainer/Combat/Turn Order".active.stats.is_enemy == false:
 			 $"../../../../Combat/Turn Order".active.do_skill.find_skill("Attack", false)
-			 $"../../../../Combat/winscreen/winlose".check_combat_over()
+#			 $"../../../../Combat/winscreen/winlose".check_combat_over()
 		
 #func _on_enemy_selected():
 #	connect("turn_next", $"../../../../Combat/TurnNext", "_on_Button_turn_next")

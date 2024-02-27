@@ -40,4 +40,4 @@ func set_health_bar() :
 	var health_bar = scene.instance()
 	add_child(health_bar)
 	health_bar.get_node("ProgressBar").max_value = stats.hp_max
-	health_bar.get_node("ProgressBar").value = stats.hp 
+	health_bar.get_node("ProgressBar").value = stats.hp

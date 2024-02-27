@@ -9,6 +9,7 @@ onready var menuanim = $MenuAnim
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MenuMusic.play_menu_music()
 	fade.play("fade")
 	menuanim.play("menu")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://export_combat/Characters/Classes/Skills Scenes/DoSkill_node.gd" type="Script" id=1]
 [ext_resource path="res://export_combat/Characters/Classes/Job.gd" type="Script" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle10.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle3.png" type="Texture" id=13]
-[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/Attack1.tres" type="Resource" id=14]
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/Haste.tres" type="Resource" id=14]
 [ext_resource path="res://export_combat/Characters/Classes/Skills Scenes/SkillScene_node.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle7.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle4.png" type="Texture" id=17]
@@ -33,6 +33,8 @@
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Attacco ranged/Attaccor4.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Attacco ranged/Attaccor5.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Hurt/Hurt2.png" type="Texture" id=33]
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/SinisterHope.tres" type="Resource" id=34]
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/BodyModifications.tres" type="Resource" id=35]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -112,7 +114,7 @@ tracks/0/keys = {
 scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
 starting_stats = ExtResource( 29 )
-skill_array = [ ExtResource( 24 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ) ]
+skill_array = [ ExtResource( 24 ), ExtResource( 14 ), ExtResource( 35 ), ExtResource( 34 ) ]
 skill_scene = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

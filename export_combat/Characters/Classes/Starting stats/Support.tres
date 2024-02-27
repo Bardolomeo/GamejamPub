@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-hp_max = 40
+hp_max = 60
 speed = 0.7
 gold = 0
-job = "The Mistique"
+job = "The Mystique"
 is_enemy = false
 atk_mult = 1.0
 def_mult = 1.0

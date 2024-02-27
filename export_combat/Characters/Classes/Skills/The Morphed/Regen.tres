@@ -5,11 +5,11 @@
 [resource]
 script = ExtResource( 1 )
 hit_rate = 2.0
-damage = 0
-usage = 20
-max_usage = 20
-_range = "melee"
-target = "single"
-effect = "miss_health"
-skill_name = "Heal"
-description = "Lorem Ipsum pisello palle"
+damage = 15
+usage = 2
+max_usage = 2
+_range = "ranged"
+target = "ally"
+effect = "regen"
+skill_name = "Regen"
+description = "Heal a party member and apply [Regen] status on them"

@@ -12,6 +12,7 @@ onready var sprite_c2 = $VBoxContainer/Choices/Choice2/AnimatedStreets
 onready var sprite_c3 = $VBoxContainer/Choices/Choice3/AnimatedStreets
 onready var Gold = $VBoxContainer/HBoxContainer1/VBoxContainer/HBoxContainer/Gold
 onready var pause_menu = $PauseMenu
+var flag = 0
 
 var paused = false
 

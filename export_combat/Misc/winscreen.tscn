@@ -8,6 +8,7 @@
 font_path = "res://Assets/Fonts/OldWizard.ttf"
 
 [sub_resource type="DynamicFont" id=7]
+size = 150
 font_data = SubResource( 6 )
 
 [sub_resource type="Animation" id=2]

@@ -12,14 +12,14 @@
       "attacco base": "25"
     },
     "Ch3": {
-      "classe": "The Mistique",
+      "classe": "The Mystique",
       "vita": "60",
       "velocità": "0.6",
       "attacco base": "15"
     },
     "Ch4": {
       "classe": "The Armless",
-      "vita": "40",
+      "vita": "200",
       "velocità": "0.4",
       "attacco base": "10"
     },
@@ -48,7 +48,7 @@
       "attacco base": "30"
     },
     "Ch9": {
-      "classe": "The Spore",
+      "classe": "The Spores",
       "vita": "60",
       "velocità": "0.5",
       "attacco base": "10"

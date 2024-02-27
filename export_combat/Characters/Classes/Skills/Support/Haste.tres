@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Res_ref_skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hit_rate = 2.0
+damage = 0
+usage = 3
+max_usage = 3
+_range = "ranged"
+target = "ally"
+effect = "haste"
+skill_name = "Haste"
+description = "Boost one ally's speed"

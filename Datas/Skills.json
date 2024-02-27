@@ -3,189 +3,126 @@
 		"Skill1": {
 			"nome": "Void claw",
 			"effect": "Attacca tutti i nemici",
-			"damage": 10,
 			"usage": 3,
-			"accuracy": 0.8,
-			"type": "AttackAll"
 		},
 		"Skill2": {
 			"nome": "Shadow stance",
 			"effect": "Potenzia il prossimo attacco che esegue",
-			"damage": 1.2,
 			"usage": 5,
-			"accuracy": 1.0,
-			"type": "Strenght"
 		},
 		"Skill3": {
 			"nome": "Scuffle",
 			"effect": "Attacca 2 volte lo stesso bersaglio",
-			"damage": 20,
-			"usage": 4,
-			"accuracy": 0.7,
-			"type": "Double"
+			"usage": 3,
 		}
 	},
 	"Ch2": {
 		"Skill1": {
 			"nome": "Iron fist",
 			"effect": "Attacca il bersaglio e attiva la difesa su se stesso",
-			"damage": 20,
 			"usage": 3,
-			"accuracy": 0.8,
-			"type": "Attack"
 		},
 		"Skill2": {
 			"nome": "Regen",
 			"effect": "Cura per turno un party member",
-			"damage": 15,
 			"usage": 2,
-			"accuracy": null,
-			"type": "Regen"
 		},
 		"Skill3": {
 			"nome": "Hale",
-			"effect": "Aumenta la velocita di tutti i party member",
-			"damage": 5,
+			"effect": "Infliggi danni leggeri e aumenta la velocita di tutti i party member",
 			"usage": 4,
-			"accuracy": 1.0,
-			"type": "Speed"
 		}
 	},
 	"Ch3": {
 		"Skill1": {
 			"nome": "Speed boost",
 			"effect": "Aumenta la velocità di un party member",
-			"damage": 1.1,
 			"usage": 2,
-			"accuracy": "Non missa",
-			"type": "Speed"
 		},
 		"Skill2": {
 			"nome": "Regen",
 			"effect": "Cura per turno un party member",
-			"damage": 10,
 			"usage": 4,
-			"accuracy": "Non missa",
-			"type": "Regen"
 		},
 		"Skill3": {
 			"nome": "Heal",
 			"effect": "Cura un party member",
-			"damage": 10,
 			"usage": 3,
-			"accuracy": "Non missa",
-			"type": "Cure"
 		}
 	},
 	"Ch4": {
 		"Skill1": {
 			"nome": "Rage",
-			"effect": "Buff su tutte le sue statistiche",
-			"damage": 1.5,
+			"effect": "Strenght su tutti party member",
 			"usage": 2,
-			"accuracy": 1.0,
-			"type": "Attack"
 		},
 		"Skill2": {
 			"nome": "Last resort",
 			"effect": "Infligge danno pari alla vita mancante x3",
-			"damage": 0,
 			"usage": 4,
-			"accuracy": 0.8,
-			"type": "Attack"
 		},
 		"Skill3": {
-			"nome": "Heal",
-			"effect": "Cura un party member",
-			"damage": 20,
-			"usage": 5,
-			"accuracy": "Non missa",
-			"type": "Cure"
+			"nome": "Self care",
+			"effect": "Cura se stesso",
+			"usage": 4,
 		}
 	},
 	"Ch5": {
 		"Skill1": {
 			"nome": "Multiple injection",
 			"effect": "Attacca 2 volte lo stesso bersaglio",
-			"damage": 20,
 			"usage": 4,
-			"accuracy": 0.7,
-			"type": "Double"
+
 		},
 		"Skill2": {
 			"nome": "Intravenous",
 			"effect": "Infligge sanguinamento ad un nemico",
-			"damage": 25,
 			"usage": 4,
-			"accuracy": 0.9,
-			"type": "Poison"
 		},
 		"Skill3": {
 			"nome": "Adrenalin shoot",
-			"effect": "Buff velocità su tutti i party member",
-			"damage": 1.2,
+			"effect": "Infliggi un leggero danno e applica Haste su tutti i party member",
 			"usage": 3,
-			"accuracy": 0.7,
-			"type": "Speed"
 		}
 	},
 	"Ch6": {
 		"Skill1": {
 			"nome": "Iron fist",
 			"effect": "Attacca il bersaglio e attiva la difesa su se stesso",
-			"damage": 20,
 			"usage": 3,
-			"accuracy": 0.8,
-			"type": "Attack"
 		},
 		"Skill2": {
 			"nome": "Hole trance",
 			"effect": "Infligge Stun su un nemico",
-			"damage": null,
 			"usage": 4,
-			"accuracy": 0.8,
-			"type": "Stun"
 		},
 		"Skill3": {
 			"nome": "Terrifying presence",
-			"effect": "Infligge debolezza su tutti i nemici",
-			"damage": -1.3,
+			"effect": "Infigge un leggero danno e applica debolezza su tutti i nemici",
 			"usage": 3,
-			"accuracy": 1.0,
-			"type": "Strenght"
 		}
 	},
 	"Ch7": {
 		"Skill1": {
 			"nome": "Slash",
 			"effect": "Infligge sanguinamento ad un nemico",
-			"damage": 15,
 			"usage": 5,
-			"accuracy": 1.0,
-			"type": "Poison"
 		},
 		"Skill2": {
 			"nome": "Brawl",
 			"effect": "Attacca 2 volte lo stesso bersaglio",
-			"damage": 25,
 			"usage": 4,
-			"accuracy": 0.7,
-			"type": "Double"
 		},
 		"Skill3": {
 			"nome": "Lightweight",
 			"effect": "Buff velocità su se stesso",
-			"damage": 1.3,
 			"usage": 3,
-			"accuracy": 0.7,
-			"type": "Speed"
 		}
 	},
 	"Ch8": {
 		"Skill1": {
 			"nome": "Diamond dust",
 			"effect": "Attacca tutti i nemici",
-			"damage": 60,
 			"usage": 1,
 			"accuracy": 0.9,
 			"type": "AttackAll"
@@ -193,44 +130,31 @@
 		"Skill2": {
 			"nome": "Permafrost",
 			"effect": "Stunna un nemico",
-			"damage": null,
+			"damage": 0,
 			"usage": 3,
-			"accuracy": 0.8,
-			"type": "Stun"
 		},
 		"Skill3": {
 			"nome": "Booster haze",
 			"effect": "Aumenta la precisione di un party member",
-			"damage": 1.3,
 			"usage": 4,
-			"accuracy": 0.7,
-			"type": "Accuracy"
 		}
 	},
 	"Ch9": {
 		"Skill1": {
 			"nome": "Poisonous cloud",
 			"effect": "Infligge debolezza su un nemico",
-			"damage": -1.3,
 			"usage": 3,
-			"accuracy": 0.8,
-			"type": "Strenght"
 		},
 		"Skill2": {
 			"nome": "Sticky spore",
-			"effect": "Infligge rallentamento su tutti i nemici",
-			"damage": -1.3,
+			"effect": "Infigge un leggero danno e applica Slow su tutti i nemici",
 			"usage": 3,
-			"accuracy": 0.7,
-			"type": "Speed"
 		},
 		"Skill3": {
 			"nome": "Spore cloud",
 			"effect": "Random debuff su un nemico",
-			"damage": -1.2,
 			"usage": 4,
-			"accuracy": 0.8,
-			"type": "Random"
 		}
-	}
+	},
 }
+
