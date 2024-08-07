@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://export_combat/Turn Order.tscn" type="PackedScene" id=1]
 [ext_resource path="res://export_combat/Combat_node.gd" type="Script" id=3]
 [ext_resource path="res://export_combat/Misc/winscreen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://export_combat/winorlose.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource( 3 )
@@ -19,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1916.0
 margin_bottom = 1081.0
+custom_styles/focus = SubResource( 1 )
 flat = true
 
 [node name="Turn Order" parent="." instance=ExtResource( 1 )]

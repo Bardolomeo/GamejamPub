@@ -17,6 +17,25 @@ var flag = 0
 var paused = false
 
 func _ready():
+	print(GlobalVar.firstmember)
+	stage_streets()
+	if GlobalVar.monocle == "Inv1":
+		GlobalVar.enemyweak = true
+	if GlobalVar.regenStone == "Inv4":
+		GlobalVar.partyregen = true
+	if GlobalVar.oldTome == "Inv6":
+		if GlobalVar.oldtomeflag == 0:
+			var n :int = randi() % 3 + 1
+			if n == 1:
+				GlobalVar.partystrength = true
+				GlobalVar.oldtomeflag = 1
+			elif n == 2:
+				GlobalVar.partyhaste = true
+				GlobalVar.oldtomeflag = 1
+			elif n == 3:
+				GlobalVar.partyregen = true
+				GlobalVar.oldtomeflag = 1
+	Gold.text = "$" + str(GlobalVar.gold)
 	for key in SquadData.squad_data.keys():
 		var ch_slot = squad_ch.instance()
 		ch_slot.load_sprite(GlobalVar.firstmember)
@@ -47,14 +66,18 @@ func pause():
 		
 	paused = !paused
 
-func gold_counter(var g): 
-	Gold.text = "$" + str(GlobalVar.gold)
-
 func  next_choice(name):
 	if name == "fontanag" || name == "fontanan":
+		match name:
+			"fontanag":
+				GlobalVar.day = 1
+			"fontanan":
+				GlobalVar.day = 0
 		get_tree().change_scene("res://UIRest.tscn")
 	elif name == "shopg" || name == "shopn":
 		get_tree().change_scene("res://Shop.tscn")
+	elif GlobalVar.choiceNum >= GlobalVar.choiceCap:
+		get_tree().change_scene("res://BossIntro.tscn")
 	else:
 		get_tree().change_scene("res://UIEvent.tscn")
 
@@ -62,11 +85,10 @@ func _on_Choice1_pressed():
 	next_choice(sprite_c1.get_animation())
 
 func _on_Choice2_pressed():
-	GlobalVar.gold += 10
-	next_choice(sprite_c1.get_animation())
+	next_choice(sprite_c2.get_animation())
 
 func _on_Choice3_pressed():
-	next_choice(sprite_c1.get_animation())
+	next_choice(sprite_c3.get_animation())
 
 func _on_Choice1_mouse_entered():
 	hover_color("c", sprite_c1)
@@ -90,10 +112,8 @@ func _on_Choice3_mouse_exited():
 func hover_color(var color, var path_c) :
 	if color == "c":	
 		path_c.set_modulate(Color(0.5, 0.039215, 0.7, 2)) # Imposta il colore rosso e la trasparenza al 50%
-		path_c.play("hover_animation")
 	if color == "e" :
 		path_c.set_modulate(Color.white) # Imposta il colore rosso e la trasparenza al 50%
-		path_c.play("hover_animation")
 	
 	
 var figlio: Node
@@ -148,21 +168,16 @@ func randomize_street():
 func randomize_rest(s1, s2, s3):
 	var n1 = randi() % 20 + 1
 	var n2 = randi() % 20 + 1
-	var n3 = randi() % 20 + 1
 	if GlobalVar.day == 0:
-		n1 = randG(n1,n2,n3);
-		n2 = randG(n2,n1,n3);
-		n2 = randG(n3,n1,n2);
-		sprite_c1.play("fontanag")
-		GlobalVar.day = 1
+		n1 = randG(n1,n2,0);
+		n2 = randG(n2,n1,0);
+		s1.play("fontanag")
 	else:
-		n1 = randN(n1,n2,n3);
-		n2 = randN(n2,n1,n3);
-		n2 = randN(n3,n1,n2);
-		sprite_c1.play("fontanan")
-		GlobalVar.day = 0
-	sprite_c2.play("strada" + str(n1))
-	sprite_c3.play("strada" + str(n2))
+		n1 = randN(n1,n2,0);
+		n2 = randN(n2,n1,0);
+		s1.play("fontanan")
+	s2.play("strada" + str(n1))
+	s3.play("strada" + str(n2))
 
 func randomize_shop(s1, s2, s3):
 	var n1 = randi() % 20 + 1
@@ -170,18 +185,19 @@ func randomize_shop(s1, s2, s3):
 	if GlobalVar.day == 0:
 		n1 = randG(n1,n2,0);
 		n2 = randG(n2,n1,0);
-		sprite_c1.play("shopg")
+		s1.play("shopg")
 	else:
 		n1 = randN(n1,n2,0);
 		n2 = randN(n2,n1,0);
-		sprite_c1.play("shopn")
-	sprite_c2.play("strada" + str(n1))
-	sprite_c3.play("strada" + str(n2))
+		s1.play("shopn")
+	s2.play("strada" + str(n1))
+	s3.play("strada" + str(n2))
 
 	
 func level():
+	GlobalVar.choiceNum += 1
 	if GlobalVar.choiceNum < GlobalVar.choiceCap:
-		GlobalVar.choiceNum += 1
+		print(str(GlobalVar.choiceNum) + "	cap: " + str(GlobalVar.choiceCap))
 		if GlobalVar.choiceNum % 4 == 0 :
 			match randi() %3 + 1:
 				1:
@@ -200,7 +216,16 @@ func level():
 					randomize_shop(sprite_c3,sprite_c2,sprite_c1)
 		else:
 			randomize_street()
+	else:
+		boss_choice()
+	#	randomize_street()
 
+func boss_choice():
+	sprite_c1.hide()
+	sprite_c3.hide()
+	$VBoxContainer/Choices/Choice1.disabled = true
+	$VBoxContainer/Choices/Choice3.disabled = true
+	sprite_c2.play("strada" + str(randi() % 20 + 1))
 
 func randN (n1, n2, n3):
 	while n1 == n2 || n1 == n3 || n1 % 2 != 0:
@@ -211,3 +236,24 @@ func randG (n1, n2, n3):
 	while n1 == n2 || n1 == n3 || n1 % 2 == 0:
 		 n1 = randi() % 20 + 1
 	return n1
+	
+	
+func stage_streets():
+
+	if GlobalVar.stage == 2:
+		sprite_c1.hide()
+		sprite_c2.hide()
+		sprite_c3.hide()
+		sprite_c1 = $VBoxContainer/Choices/Choice1/AnimatedStreets2
+		sprite_c2 = $VBoxContainer/Choices/Choice2/AnimatedStreets2
+		sprite_c3 = $VBoxContainer/Choices/Choice3/AnimatedStreets2
+	elif GlobalVar.stage == 3:
+		sprite_c1.hide()
+		sprite_c2.hide()
+		sprite_c3.hide()
+		sprite_c1 = $VBoxContainer/Choices/Choice1/AnimatedStreets3
+		sprite_c2 = $VBoxContainer/Choices/Choice2/AnimatedStreets3
+		sprite_c3 = $VBoxContainer/Choices/Choice3/AnimatedStreets3
+	sprite_c1.show()
+	sprite_c2.show()
+	sprite_c3.show()

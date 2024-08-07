@@ -142,5 +142,5 @@ animations = [ {
 [node name="AnimatedSquad" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Ch9"
-frame = 1
+frame = 3
 playing = true

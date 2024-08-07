@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Res_ref_skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hit_rate = 1.0
+damage = 10
+usage = 2
+max_usage = 2
+_range = "ranged"
+target = "single_wtb"
+effect = "stren"
+skill_name = "Blasphemy"
+description = "Bestemmia against an enemy with small damage fueling all party with [rage]"

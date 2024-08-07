@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 1.0
-damage = 5
+hit_rate = 1.2
+damage = 10
 usage = 4
 max_usage = 4
 _range = "ranged"
 target = "single_wtb"
 effect = "haste"
 skill_name = "Hale"
-description = "Damage an enemy and boosts alla party members speed"
+description = "Target an enemy and apply [Haste] on all party member"

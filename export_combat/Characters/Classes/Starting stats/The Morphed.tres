@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-hp_max = 110
+hp_max = 100
 speed = 0.3
 gold = 0
 job = "The Morphed"

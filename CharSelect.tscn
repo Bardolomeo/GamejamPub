@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=142 format=2]
 
 [ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Claw.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Mistique.png" type="Texture" id=2]
@@ -13,12 +13,106 @@
 [ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Blade .png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Spore.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites 300X/Portrait/Party member/The Frost.png" type="Texture" id=13]
-[ext_resource path="res://Assets/borderportrait.png" type="Texture" id=14]
+[ext_resource path="res://Assets/selectborder.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle8.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle8.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle6.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle5.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle9.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle10.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle7.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle6.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Claw/Idle/Idle4.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle7.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle9.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle5.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle4.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle10.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle1.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle2.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Morphed/Idle/Idle3.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle9.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle10.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle6.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle4.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle5.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle7.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle8.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle1.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle2.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle3.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle6.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle8.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle9.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle3.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle10.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle2.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle1.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle4.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle7.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Armless/Idle/Idle5.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle10.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle8.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle4.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle6.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle3.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle5.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle9.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle2.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle1.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Stinger/Idle/Idle7.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle4.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle6.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle5.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle8.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle3.png" type="Texture" id=69]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle7.png" type="Texture" id=70]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle4.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle1.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle10.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle6.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle7.png" type="Texture" id=75]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle8.png" type="Texture" id=76]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle1.png" type="Texture" id=77]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle9.png" type="Texture" id=78]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle7.png" type="Texture" id=79]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle5.png" type="Texture" id=80]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle2.png" type="Texture" id=81]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle2.png" type="Texture" id=82]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle10.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Holed/Idle/Idle9.png" type="Texture" id=84]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle3.png" type="Texture" id=85]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle10.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle4.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle2.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle6.png" type="Texture" id=89]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle3.png" type="Texture" id=90]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle9.png" type="Texture" id=91]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle5.png" type="Texture" id=92]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle8.png" type="Texture" id=93]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Frost/Idle/Idle1.png" type="Texture" id=94]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle7.png" type="Texture" id=95]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle4.png" type="Texture" id=96]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle6.png" type="Texture" id=97]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle5.png" type="Texture" id=98]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle1.png" type="Texture" id=99]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle8.png" type="Texture" id=100]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle9.png" type="Texture" id=101]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle2.png" type="Texture" id=102]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle3.png" type="Texture" id=103]
+[ext_resource path="res://Assets/Sprites 300X/Party/The_Spore/Idle/Idle10.png" type="Texture" id=104]
+[ext_resource path="res://Assets/borderportrait2.png" type="Texture" id=105]
+[ext_resource path="res://Assets/bordername.png" type="Texture" id=106]
 
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=25]
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 1 )
@@ -38,6 +132,8 @@ texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
 
+[sub_resource type="StyleBoxEmpty" id=26]
+
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 160, 160 )
@@ -47,6 +143,8 @@ margin_top = 14.3197
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=27]
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 2 )
@@ -58,15 +156,18 @@ texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxEmpty" id=28]
+
+[sub_resource type="StyleBoxTexture" id=34]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 160, 160 )
-margin_top = 14.3197
 
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=29]
 
 [sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 5 )
@@ -78,6 +179,8 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
 
+[sub_resource type="StyleBoxEmpty" id=30]
+
 [sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 160, 160 )
@@ -87,6 +190,8 @@ margin_top = 14.3197
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=31]
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 11 )
@@ -98,6 +203,8 @@ texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
 
+[sub_resource type="StyleBoxEmpty" id=32]
+
 [sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 160, 160 )
@@ -108,18 +215,14 @@ texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 160, 160 )
 modulate_color = Color( 0.694118, 0.486275, 1, 1 )
 
+[sub_resource type="StyleBoxEmpty" id=33]
+
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 160, 160 )
 margin_top = 14.3197
 
 [sub_resource type="DynamicFont" id=16]
-size = 70
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=17]
 size = 70
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -160,7 +263,7 @@ resource_name = "menu"
 length = 3.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/path = NodePath("FirstSelect:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -172,15 +275,75 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Ch1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Ch2",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "Ch3",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 53 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "Ch4",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 64 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "Ch5",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 81 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 68 ), ExtResource( 84 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "Ch6",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 77 ), ExtResource( 82 ), ExtResource( 85 ), ExtResource( 71 ), ExtResource( 80 ), ExtResource( 74 ), ExtResource( 79 ), ExtResource( 76 ), ExtResource( 78 ), ExtResource( 83 ) ],
+"loop": true,
+"name": "Ch7",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 94 ), ExtResource( 88 ), ExtResource( 90 ), ExtResource( 87 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 75 ), ExtResource( 93 ), ExtResource( 91 ), ExtResource( 86 ) ],
+"loop": true,
+"name": "Ch8",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 99 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 96 ), ExtResource( 98 ), ExtResource( 97 ), ExtResource( 95 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 104 ) ],
+"loop": true,
+"name": "Ch9",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=38]
+size = 80
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=37]
+size = 100
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
 [node name="CharSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -350, 329 )
+position = Vector2( 1081, 586 )
 texture = ExtResource( 10 )
-offset = Vector2( 1310, 211 )
+offset = Vector2( -121, -46 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchor_left = 0.5
@@ -201,6 +364,7 @@ margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 rect_pivot_offset = Vector2( 2709, 37 )
 custom_styles/hover = SubResource( 4 )
+custom_styles/focus = SubResource( 25 )
 custom_styles/normal = SubResource( 5 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char1"]
@@ -211,68 +375,97 @@ rect_pivot_offset = Vector2( 90, 998 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char1Select" type="Sprite" parent="GridContainer/Char1"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char1"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
-[node name="Char 2" type="Button" parent="GridContainer"]
+[node name="Char2" type="Button" parent="GridContainer"]
 margin_left = 260.0
 margin_right = 420.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 6 )
+custom_styles/focus = SubResource( 26 )
 custom_styles/normal = SubResource( 7 )
 
-[node name="Panel" type="Panel" parent="GridContainer/Char 2"]
+[node name="Panel" type="Panel" parent="GridContainer/Char2"]
 visible = false
 margin_right = 160.0
 margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="GridContainer/Char 2"]
-position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+[node name="char2Select" type="Sprite" parent="GridContainer/Char2"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( -1268, 274 )
+texture = ExtResource( 6 )
+offset = Vector2( 1348, -194 )
 
-[node name="Char 3" type="Button" parent="GridContainer"]
+[node name="Sprite" type="Sprite" parent="GridContainer/Char2"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 105 )
+
+[node name="Char3" type="Button" parent="GridContainer"]
 margin_left = 520.0
 margin_right = 680.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 rect_pivot_offset = Vector2( 1683, -56 )
 custom_styles/hover = SubResource( 8 )
+custom_styles/focus = SubResource( 27 )
 custom_styles/normal = SubResource( 9 )
 
-[node name="Panel" type="Panel" parent="GridContainer/Char 3"]
+[node name="Panel" type="Panel" parent="GridContainer/Char3"]
 visible = false
 margin_right = 160.0
 margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="GridContainer/Char 3"]
+[node name="char3Select" type="Sprite" parent="GridContainer/Char3"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
 position = Vector2( -663, 155 )
-texture = ExtResource( 14 )
+texture = ExtResource( 2 )
 offset = Vector2( 743, -75 )
 
-[node name="Char 4" type="Button" parent="GridContainer"]
+[node name="Sprite" type="Sprite" parent="GridContainer/Char3"]
+position = Vector2( -663, 155 )
+texture = ExtResource( 105 )
+offset = Vector2( 743, -75 )
+
+[node name="Char4" type="Button" parent="GridContainer"]
 margin_top = 260.0
 margin_right = 160.0
 margin_bottom = 420.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/normal = SubResource( 34 )
 
-[node name="Panel" type="Panel" parent="GridContainer/Char 4"]
+[node name="Panel" type="Panel" parent="GridContainer/Char4"]
 visible = false
 margin_right = 160.0
 margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="GridContainer/Char 4"]
+[node name="char4Select" type="Sprite" parent="GridContainer/Char4"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Char4"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 105 )
 
 [node name="Char5" type="Button" parent="GridContainer"]
 margin_left = 260.0
@@ -281,6 +474,7 @@ margin_right = 420.0
 margin_bottom = 420.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 12 )
+custom_styles/focus = SubResource( 29 )
 custom_styles/normal = SubResource( 13 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char5"]
@@ -290,9 +484,15 @@ margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char5Select" type="Sprite" parent="GridContainer/Char5"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( 80, 80 )
+texture = ExtResource( 5 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char5"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
 [node name="Char6" type="Button" parent="GridContainer"]
 margin_left = 520.0
@@ -301,6 +501,7 @@ margin_right = 680.0
 margin_bottom = 420.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 14 )
+custom_styles/focus = SubResource( 30 )
 custom_styles/normal = SubResource( 15 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char6"]
@@ -311,9 +512,16 @@ rect_pivot_offset = Vector2( -1171, -171 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char6Select" type="Sprite" parent="GridContainer/Char6"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( -1888, -98 )
+texture = ExtResource( 3 )
+offset = Vector2( 1968, 178 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char6"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
 [node name="Char7" type="Button" parent="GridContainer"]
 margin_top = 520.0
@@ -321,6 +529,7 @@ margin_right = 160.0
 margin_bottom = 680.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 18 )
+custom_styles/focus = SubResource( 31 )
 custom_styles/normal = SubResource( 19 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char7"]
@@ -330,9 +539,15 @@ margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char7Select" type="Sprite" parent="GridContainer/Char7"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( 80, 80 )
+texture = ExtResource( 11 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char7"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
 [node name="Char8" type="Button" parent="GridContainer"]
 margin_left = 260.0
@@ -341,6 +556,7 @@ margin_right = 420.0
 margin_bottom = 680.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 20 )
+custom_styles/focus = SubResource( 32 )
 custom_styles/normal = SubResource( 21 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char8"]
@@ -350,9 +566,15 @@ margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char8Select" type="Sprite" parent="GridContainer/Char8"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( 80, 80 )
+texture = ExtResource( 13 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char8"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
 [node name="Char9" type="Button" parent="GridContainer"]
 margin_left = 520.0
@@ -361,6 +583,7 @@ margin_right = 680.0
 margin_bottom = 680.0
 rect_min_size = Vector2( 160, 160 )
 custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 33 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="GridContainer/Char9"]
@@ -370,34 +593,151 @@ margin_bottom = 160.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
+[node name="char9Select" type="Sprite" parent="GridContainer/Char9"]
+visible = false
+self_modulate = Color( 1, 0.988235, 0.25098, 1 )
+position = Vector2( -1783, -17 )
+texture = ExtResource( 12 )
+offset = Vector2( 1863, 97 )
+
 [node name="Sprite" type="Sprite" parent="GridContainer/Char9"]
 position = Vector2( 80, 80 )
-texture = ExtResource( 14 )
+texture = ExtResource( 105 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -311.0
-margin_top = 50.0
-margin_right = 311.0
-margin_bottom = 71.0
+margin_left = -331.0
+margin_top = 22.0
+margin_right = 333.0
+margin_bottom = 167.0
 custom_fonts/font = SubResource( 16 )
-text = "Choose your phobia..."
-
-[node name="Label2" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -357.0
-margin_top = -120.0
-margin_right = 361.0
-margin_bottom = -49.0
-custom_fonts/font = SubResource( 17 )
-text = "...and enter the unknown"
+text = "Choose your phobias
+and enter the unknown"
+align = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource( 9 )]
 visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/RESET = SubResource( 22 )
+anims/fade = SubResource( 23 )
+anims/menu = SubResource( 24 )
+
+[node name="FirstSelect" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 300, 470 )
+scale = Vector2( 2.5, 2.5 )
+frames = SubResource( 36 )
+animation = "Ch9"
+
+[node name="Panel" type="Panel" parent="FirstSelect"]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -102.0
+margin_top = -102.0
+margin_right = -90.0
+margin_bottom = -90.0
+
+[node name="borderselect" type="Sprite" parent="FirstSelect"]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+
+[node name="bordername" type="Sprite" parent="FirstSelect"]
+position = Vector2( -166, 145.6 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 106 )
+offset = Vector2( 415, -20 )
+
+[node name="MarginContainer" type="MarginContainer" parent="FirstSelect/bordername"]
+margin_left = 144.0
+margin_top = -75.0
+margin_right = 686.0
+margin_bottom = 43.0
+
+[node name="Name1" type="Label" parent="FirstSelect/bordername/MarginContainer"]
+margin_top = 19.0
+margin_right = 542.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 38 )
+text = "The Mystique"
+align = 1
+
+[node name="Panel" type="Panel" parent="FirstSelect/bordername"]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+show_behind_parent = true
+margin_left = 144.0
+margin_top = -82.0
+margin_right = 686.0
+margin_bottom = 43.0
+
+[node name="SecondSelect" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1620, 470 )
+scale = Vector2( 2.5, 2.5 )
+frames = SubResource( 36 )
+animation = "Ch9"
+
+[node name="Panel" type="Panel" parent="SecondSelect"]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -102.0
+margin_top = -102.0
+margin_right = -90.0
+margin_bottom = -90.0
+
+[node name="borderselect" type="Sprite" parent="SecondSelect"]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+
+[node name="bordername" type="Sprite" parent="SecondSelect"]
+position = Vector2( -166, 145.6 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 106 )
+offset = Vector2( 415, -20 )
+
+[node name="MarginContainer" type="MarginContainer" parent="SecondSelect/bordername"]
+margin_left = 144.0
+margin_top = -75.0
+margin_right = 686.0
+margin_bottom = 43.0
+
+[node name="Name2" type="Label" parent="SecondSelect/bordername/MarginContainer"]
+margin_top = 19.0
+margin_right = 542.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 38 )
+text = "The Mystique"
+align = 1
+
+[node name="Panel" type="Panel" parent="SecondSelect/bordername"]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+show_behind_parent = true
+margin_left = 144.0
+margin_top = -82.0
+margin_right = 686.0
+margin_bottom = 43.0
+
+[node name="Embark" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -521.0
+margin_top = 387.0
+margin_right = 517.0
+margin_bottom = 493.0
+rect_pivot_offset = Vector2( -316, -1282 )
+custom_colors/font_color_hover = Color( 0.662745, 0.027451, 0.666667, 1 )
+custom_fonts/font = SubResource( 37 )
+text = "Embark on your journey"
+flat = true
 
 [node name="Black" type="ColorRect" parent="."]
 pause_mode = 2
@@ -407,18 +747,13 @@ rect_min_size = Vector2( 1920, 1080 )
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-pause_mode = 2
-anims/RESET = SubResource( 22 )
-anims/fade = SubResource( 23 )
-anims/menu = SubResource( 24 )
-
 [connection signal="pressed" from="GridContainer/Char1" to="." method="_on_Char1_pressed"]
-[connection signal="pressed" from="GridContainer/Char 2" to="." method="_on_Char_2_pressed"]
-[connection signal="pressed" from="GridContainer/Char 3" to="." method="_on_Char_3_pressed"]
-[connection signal="pressed" from="GridContainer/Char 4" to="." method="_on_Char_4_pressed"]
+[connection signal="pressed" from="GridContainer/Char2" to="." method="_on_Char_2_pressed"]
+[connection signal="pressed" from="GridContainer/Char3" to="." method="_on_Char_3_pressed"]
+[connection signal="pressed" from="GridContainer/Char4" to="." method="_on_Char_4_pressed"]
 [connection signal="pressed" from="GridContainer/Char5" to="." method="_on_Char5_pressed"]
 [connection signal="pressed" from="GridContainer/Char6" to="." method="_on_Char6_pressed"]
 [connection signal="pressed" from="GridContainer/Char7" to="." method="_on_Char7_pressed"]
 [connection signal="pressed" from="GridContainer/Char8" to="." method="_on_Char8_pressed"]
 [connection signal="pressed" from="GridContainer/Char9" to="." method="_on_Char9_pressed"]
+[connection signal="pressed" from="Embark" to="." method="_on_Embark_pressed"]

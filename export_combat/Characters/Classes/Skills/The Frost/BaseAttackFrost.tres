@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Res_ref_skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hit_rate = 1.5
+damage = 30
+usage = -1
+max_usage = -1
+_range = "melee"
+target = "single"
+effect = "attack"
+skill_name = "Attack"
+description = ""

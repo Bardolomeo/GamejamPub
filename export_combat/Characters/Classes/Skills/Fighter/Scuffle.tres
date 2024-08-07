@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 1.0
+hit_rate = 1.2
 damage = 10
 usage = 3
 max_usage = 3
 _range = "melee"
 target = "multiattack"
 effect = "attack"
-skill_name = "Scuffle"
-description = "Targets three times the same enemy with low damage"
+skill_name = "Dark Urge"
+description = "Targets three times the same enemy"

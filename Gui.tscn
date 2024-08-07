@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Gui.gd" type="Script" id=1]
 [ext_resource path="res://Assets/cornice1.png" type="Texture" id=2]
@@ -6,6 +6,14 @@
 [ext_resource path="res://Assets/borderbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fonts/OldWizard.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://AnimatedStreets3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://AnimatedStreets2.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -43,10 +51,22 @@ margin_right = 637.0
 margin_bottom = 692.0
 size_flags_horizontal = 3
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 7 )
 flat = true
 
 [node name="AnimatedStreets" parent="VBoxContainer/Choices/Choice1" instance=ExtResource( 3 )]
-position = Vector2( 324, 339 )
+position = Vector2( 317.25, 339 )
+scale = Vector2( 0.979134, 1 )
+
+[node name="AnimatedStreets2" parent="VBoxContainer/Choices/Choice1" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 317.25, 339 )
+scale = Vector2( 0.979134, 1 )
+
+[node name="AnimatedStreets3" parent="VBoxContainer/Choices/Choice1" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 317.25, 339 )
+scale = Vector2( 0.979134, 1 )
 
 [node name="Choice2" type="Button" parent="VBoxContainer/Choices"]
 margin_left = 641.0
@@ -54,20 +74,44 @@ margin_right = 1278.0
 margin_bottom = 692.0
 size_flags_horizontal = 3
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 8 )
 flat = true
 
 [node name="AnimatedStreets" parent="VBoxContainer/Choices/Choice2" instance=ExtResource( 3 )]
-position = Vector2( 330, 339 )
+position = Vector2( 313, 339 )
+scale = Vector2( 0.989181, 1 )
+
+[node name="AnimatedStreets2" parent="VBoxContainer/Choices/Choice2" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 313, 339 )
+scale = Vector2( 0.989181, 1 )
+
+[node name="AnimatedStreets3" parent="VBoxContainer/Choices/Choice2" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 313, 339 )
+scale = Vector2( 0.989181, 1 )
 
 [node name="Choice3" type="Button" parent="VBoxContainer/Choices"]
 margin_left = 1282.0
 margin_right = 1920.0
 margin_bottom = 692.0
 size_flags_horizontal = 3
+custom_styles/focus = SubResource( 9 )
 flat = true
 
 [node name="AnimatedStreets" parent="VBoxContainer/Choices/Choice3" instance=ExtResource( 3 )]
-position = Vector2( 314, 339 )
+position = Vector2( 314.75, 339 )
+scale = Vector2( 0.997682, 1 )
+
+[node name="AnimatedStreets2" parent="VBoxContainer/Choices/Choice3" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 314.75, 339 )
+scale = Vector2( 0.997682, 1 )
+
+[node name="AnimatedStreets3" parent="VBoxContainer/Choices/Choice3" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 314.75, 339 )
+scale = Vector2( 0.997682, 1 )
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 696.0
@@ -98,7 +142,7 @@ grow_vertical = 2
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_constants/hseparation = 30
+custom_constants/hseparation = -30
 columns = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer1/VBoxContainer"]
@@ -106,28 +150,32 @@ margin_top = 4.0
 margin_right = 708.0
 margin_bottom = 384.0
 size_flags_vertical = 3
-custom_constants/separation = 100
+custom_constants/separation = 0
 alignment = 1
 
 [node name="Gold" type="Label" parent="VBoxContainer/HBoxContainer1/VBoxContainer/HBoxContainer"]
-margin_left = 219.0
 margin_top = 154.0
-margin_right = 267.0
+margin_right = 321.0
 margin_bottom = 225.0
+size_flags_horizontal = 3
 size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 0.843137, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "$"
 align = 1
 valign = 1
 
 [node name="Inv" type="Button" parent="VBoxContainer/HBoxContainer1/VBoxContainer/HBoxContainer"]
-margin_left = 367.0
-margin_right = 488.0
+margin_left = 321.0
+margin_right = 708.0
 margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
 custom_fonts/font = SubResource( 2 )
 custom_styles/focus = SubResource( 6 )
 text = "Inv"
 flat = true
+icon_align = 1
 
 [node name="Container" type="Container" parent="VBoxContainer/HBoxContainer1"]
 margin_left = 712.0

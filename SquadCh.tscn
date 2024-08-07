@@ -159,6 +159,5 @@ script = ExtResource( 92 )
 [node name="AnimatedSquad" parent="." instance=ExtResource( 48 )]
 position = Vector2( 96, 96 )
 frames = SubResource( 1 )
-frame = 6
 
 [connection signal="pressed" from="." to="." method="_on_Ch1_pressed"]

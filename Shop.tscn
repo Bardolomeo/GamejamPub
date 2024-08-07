@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Shop.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Shop/shop1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Shop/Mercante/Mercante anim3.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Shop/Mercante/Mercante anim6.png" type="Texture" id=4]
@@ -9,8 +9,15 @@
 [ext_resource path="res://Assets/Shop/Mercante/Mercante anim5.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Shop/Mercante/Mercante anim1.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Shop/Mercante/Mercante anim2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/merda.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Shop/exit1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Shop/shop2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Trinkets/Ancient Rune Shop.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Trinkets/Poket Dagger Shop.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Trinkets/Enchanted Feather Shop.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Fonts/OldWizard.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Assets/borderpause.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Shop/exit2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Shop/Sold_Out.png" type="Texture" id=18]
 
 [sub_resource type="AnimatedTexture" id=3]
 flags = 4
@@ -36,7 +43,23 @@ frame_5/delay_sec = 0.0
 frame_6/texture = ExtResource( 6 )
 frame_6/delay_sec = 0.0
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+outline_color = Color( 0.592157, 0.254902, 0.254902, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [node name="Shop" type="Control"]
 anchor_right = 1.0
@@ -56,14 +79,325 @@ margin_bottom = 1036.0
 texture = SubResource( 1 )
 expand = true
 
-[node name="Exit" type="Button" parent="."]
-margin_left = 55.0
-margin_top = 681.0
-margin_right = 339.0
-margin_bottom = 953.0
-custom_styles/focus = SubResource( 2 )
-icon = ExtResource( 10 )
-flat = true
-expand_icon = true
+[node name="SoldOut1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 236, 202 )
+texture = ExtResource( 18 )
+centered = false
 
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[node name="SoldOut2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 586, 202 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="SoldOut3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 936, 202 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="PocketDagger" type="TextureButton" parent="."]
+margin_left = 236.0
+margin_top = 202.0
+margin_right = 296.0
+margin_bottom = 262.0
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 13 )
+expand = true
+
+[node name="item1" type="MarginContainer" parent="PocketDagger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.407
+anchor_right = 0.5
+anchor_bottom = 0.407
+margin_left = -63.0
+margin_top = 44.63
+margin_right = 558.0
+margin_bottom = 422.63
+rect_min_size = Vector2( 621, 378 )
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
+custom_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="PocketDagger/item1"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 621.0
+margin_bottom = 378.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="PocketDagger/item1"]
+position = Vector2( 310, 190 )
+texture = ExtResource( 16 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PocketDagger/item1"]
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="itemName" type="Label" parent="PocketDagger/item1/VBoxContainer"]
+margin_top = 41.0
+margin_right = 621.0
+margin_bottom = 92.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 7 )
+text = "Pocket dagger"
+align = 1
+autowrap = true
+
+[node name="itemDesc" type="Label" parent="PocketDagger/item1/VBoxContainer"]
+margin_top = 163.0
+margin_right = 621.0
+margin_bottom = 214.0
+custom_fonts/font = SubResource( 7 )
+text = "Increase damage"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PocketDagger/item1/VBoxContainer"]
+margin_top = 244.0
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = -30
+
+[node name="Container" type="Container" parent="PocketDagger/item1/VBoxContainer/HBoxContainer"]
+margin_right = 177.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+
+[node name="price" type="Label" parent="PocketDagger/item1/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_top = 41.0
+margin_right = 325.0
+margin_bottom = 92.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 7 )
+
+[node name="Button" type="Button" parent="PocketDagger/item1/VBoxContainer/HBoxContainer"]
+margin_left = 295.0
+margin_right = 473.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+text = "BUY"
+flat = true
+
+[node name="Container2" type="Container" parent="PocketDagger/item1/VBoxContainer/HBoxContainer"]
+margin_left = 443.0
+margin_right = 621.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+
+[node name="EnchFeather" type="TextureButton" parent="."]
+margin_left = 586.0
+margin_top = 202.0
+margin_right = 646.0
+margin_bottom = 262.0
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 14 )
+expand = true
+
+[node name="item2" type="MarginContainer" parent="EnchFeather"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.407
+anchor_right = 0.5
+anchor_bottom = 0.407
+margin_left = -63.0
+margin_top = 44.63
+margin_right = 558.0
+margin_bottom = 422.63
+rect_min_size = Vector2( 621, 378 )
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
+custom_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="EnchFeather/item2"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 621.0
+margin_bottom = 378.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EnchFeather/item2"]
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="itemName" type="Label" parent="EnchFeather/item2/VBoxContainer"]
+margin_top = 41.0
+margin_right = 621.0
+margin_bottom = 92.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 7 )
+text = "Enchanted feather"
+align = 1
+autowrap = true
+
+[node name="itemDesc" type="Label" parent="EnchFeather/item2/VBoxContainer"]
+margin_top = 163.0
+margin_right = 621.0
+margin_bottom = 214.0
+custom_fonts/font = SubResource( 7 )
+text = "Increase speed"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnchFeather/item2/VBoxContainer"]
+margin_top = 244.0
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = -30
+
+[node name="Container" type="Container" parent="EnchFeather/item2/VBoxContainer/HBoxContainer"]
+margin_right = 177.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+
+[node name="price" type="Label" parent="EnchFeather/item2/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_top = 41.0
+margin_right = 325.0
+margin_bottom = 92.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 7 )
+
+[node name="Button2" type="Button" parent="EnchFeather/item2/VBoxContainer/HBoxContainer"]
+margin_left = 295.0
+margin_right = 473.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 10 )
+text = "BUY"
+flat = true
+
+[node name="Container2" type="Container" parent="EnchFeather/item2/VBoxContainer/HBoxContainer"]
+margin_left = 443.0
+margin_right = 621.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+
+[node name="Sprite" type="Sprite" parent="EnchFeather/item2"]
+position = Vector2( 310, 190 )
+texture = ExtResource( 16 )
+
+[node name="AncientRune" type="TextureButton" parent="."]
+margin_left = 936.0
+margin_top = 202.0
+margin_right = 996.0
+margin_bottom = 262.0
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 12 )
+expand = true
+
+[node name="item3" type="MarginContainer" parent="AncientRune"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.407
+anchor_right = 0.5
+anchor_bottom = 0.407
+margin_left = -63.0
+margin_top = 44.63
+margin_right = 558.0
+margin_bottom = 422.63
+rect_min_size = Vector2( 621, 378 )
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
+custom_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="AncientRune/item3"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 621.0
+margin_bottom = 378.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="AncientRune/item3"]
+position = Vector2( 310, 190 )
+texture = ExtResource( 16 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AncientRune/item3"]
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="itemName" type="Label" parent="AncientRune/item3/VBoxContainer"]
+margin_top = 27.0
+margin_right = 621.0
+margin_bottom = 78.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 7 )
+text = "Ancient rune"
+align = 1
+autowrap = true
+
+[node name="itemDesc" type="Label" parent="AncientRune/item3/VBoxContainer"]
+margin_top = 136.0
+margin_right = 621.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 7 )
+text = "Increase max HP of all party member"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AncientRune/item3/VBoxContainer"]
+margin_top = 271.0
+margin_right = 621.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+custom_constants/separation = -30
+
+[node name="Container" type="Container" parent="AncientRune/item3/VBoxContainer/HBoxContainer"]
+margin_right = 177.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+
+[node name="price" type="Label" parent="AncientRune/item3/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_top = 28.0
+margin_right = 325.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 7 )
+
+[node name="Button3" type="Button" parent="AncientRune/item3/VBoxContainer/HBoxContainer"]
+margin_left = 295.0
+margin_right = 473.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 11 )
+text = "BUY"
+flat = true
+
+[node name="Container2" type="Container" parent="AncientRune/item3/VBoxContainer/HBoxContainer"]
+margin_left = 443.0
+margin_right = 621.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+
+[node name="exit" type="TextureButton" parent="."]
+modulate = Color( 0.4, 0.890196, 0.913725, 1 )
+margin_left = 76.0
+margin_top = 769.0
+margin_right = 396.0
+margin_bottom = 1089.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 17 )
+
+[connection signal="pressed" from="PocketDagger" to="." method="_on_PocketDagger_pressed"]
+[connection signal="pressed" from="PocketDagger/item1/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="EnchFeather" to="." method="_on_EnchFeather_pressed"]
+[connection signal="pressed" from="EnchFeather/item2/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="AncientRune" to="." method="_on_AncientRune_pressed"]
+[connection signal="pressed" from="AncientRune/item3/VBoxContainer/HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

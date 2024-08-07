@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/OldWizard.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Blade/Idle/Idle9.png" type="Texture" id=2]
@@ -114,69 +114,51 @@ scale_random = 0.01
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "armless",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 46 ), ExtResource( 35 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 33 ), ExtResource( 2 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "blade",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
 "loop": true,
-"name": "claw",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 92 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 54 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 53 ), ExtResource( 10 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "frost",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "holed",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 34 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": true,
-"name": "mistique",
+"name": "Ch1",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 43 ), ExtResource( 66 ), ExtResource( 39 ), ExtResource( 50 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ) ],
 "loop": true,
-"name": "morphed",
+"name": "Ch2",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 78 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 79 ), ExtResource( 74 ), ExtResource( 82 ) ],
+"frames": [ ExtResource( 34 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 64 ), ExtResource( 65 ) ],
 "loop": true,
-"name": "spore",
+"name": "Ch3",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Ch4",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 47 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 88 ) ],
 "loop": true,
-"name": "stinger",
+"name": "Ch5",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "Ch6",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 46 ), ExtResource( 35 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 33 ), ExtResource( 2 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "Ch7",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 92 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 54 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 53 ), ExtResource( 10 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "Ch8",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 78 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 79 ), ExtResource( 74 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "Ch9",
 "speed": 10.0
 } ]
-
-[sub_resource type="Animation" id=7]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "armless"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 12 )
@@ -209,8 +191,4 @@ process_material = SubResource( 9 )
 position = Vector2( 960, 500 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
-animation = "armless"
-
-[node name="CharAnim" type="AnimationPlayer" parent="Character"]
-anims/RESET = SubResource( 7 )
-anims/armless = SubResource( 8 )
+animation = "Ch4"

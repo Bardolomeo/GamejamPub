@@ -10,6 +10,6 @@ usage = -1
 max_usage = 0
 _range = "melee"
 target = "single"
-effect = "stren"
+effect = "attack"
 skill_name = "Attack"
 description = ""

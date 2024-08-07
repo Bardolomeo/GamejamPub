@@ -121,7 +121,7 @@ skill_scene = ExtResource( 21 )
 position = Vector2( -1.99998, -10 )
 frames = SubResource( 1 )
 animation = "attackr"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Stats" type="Node" parent="."]

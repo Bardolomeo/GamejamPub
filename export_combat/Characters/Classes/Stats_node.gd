@@ -13,6 +13,7 @@ var is_boss : bool
 var difficulty : int
 export var def_mult : float
 export var speed_mult : float
+var party_member : String = "null"
 
 func initialize(stats : StartingStats):
 	hp_max = stats.hp_max

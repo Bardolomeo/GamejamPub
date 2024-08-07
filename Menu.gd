@@ -9,6 +9,12 @@ onready var menuanim = $MenuAnim
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	InventoryData.item_data["Inv1"] = "none"
+	InventoryData.item_data["Inv2"] = "none"
+	InventoryData.item_data["Inv3"] = "none"
+	InventoryData.item_data["Inv4"] = "none"
+	InventoryData.item_data["Inv5"] = "none"
+	InventoryData.item_data["Inv6"] = "none"
 	MenuMusic.play_menu_music()
 	fade.play("fade")
 	menuanim.play("menu")

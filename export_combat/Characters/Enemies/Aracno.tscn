@@ -5,8 +5,8 @@
 [ext_resource path="res://export_combat/Characters/Classes/Stats_node.gd" type="Script" id=3]
 [ext_resource path="res://export_combat/Characters/Enemies/Stats/Aracno.tres" type="Resource" id=4]
 [ext_resource path="res://export_combat/Characters/Classes/Skills Scenes/SkillScene_node.tscn" type="PackedScene" id=5]
-[ext_resource path="res://export_combat/Characters/Enemies/Skills/Melee1.tres" type="Resource" id=6]
-[ext_resource path="res://export_combat/Characters/Enemies/Skills/Ranged1.tres" type="Resource" id=7]
+[ext_resource path="res://export_combat/Characters/Enemies/Skills/The Arachnid/Melee1.tres" type="Resource" id=6]
+[ext_resource path="res://export_combat/Characters/Enemies/Skills/The Arachnid/Ranged1.tres" type="Resource" id=7]
 [ext_resource path="res://Assets/Sprites 300X/Nemici/Arachnophobia/Idle/Idle8.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites 300X/Nemici/Arachnophobia/Idle/Idle3.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites 300X/Nemici/Arachnophobia/Idle/Idle7.png" type="Texture" id=10]
@@ -114,7 +114,7 @@ skill_scene = ExtResource( 5 )
 position = Vector2( -1.99998, -10 )
 frames = SubResource( 1 )
 animation = "hurt"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Stats" type="Node" parent="."]

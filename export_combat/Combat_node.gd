@@ -4,13 +4,23 @@ var act_ind = 0
 var characs : Array
 var stage = 1
 var enemy_turn = 0
+var combat_end: int
+
 onready var turn_order = $"Turn Order"
 onready var winorlose = $winscreen
 
 func _ready() :
 	randomize()
 	set_active_pointer($"Turn Order".active)
-	$Timer.connect("timeout", self, "_emergency_unlock")
+	if GlobalVar.stage == 1:
+		$"/root/CombatContainer/background".stop()
+		$"/root/CombatContainer/background".play("stage1")
+	if GlobalVar.stage == 2:
+		$"/root/CombatContainer/background".stop()
+		$"/root/CombatContainer/background".play("stage2")
+	if GlobalVar.stage == 3:
+		$"/root/CombatContainer/background".stop()
+		$"/root/CombatContainer/background".play("stage3")
 
 func _process(_delta):
 	if Input.is_action_pressed("Fullscreen"):
@@ -23,105 +33,6 @@ func _emergency_unlock():
 	get_tree().root.get_node(
 	"CombatContainer/HBoxContainer/InputWindow/VBoxContainer/Attack").disabled == true):
 		lock_commands(0)
-
-#func _on_Button_turn_next():
-#	$"Turn Order".active.effects.turn_done = 1
-#	$Timer.start()
-##	$"winscreen/winlose".check_combat_over()
-#	yield(get_tree().create_timer(0.1), "timeout")
-#	$"Turn Order".char_arr.sort_custom($"Turn Order", "speed_compar")
-##	if enemy_turn == number_of_enemies($"Turn Order".char_arr):
-##		enemy_turn = 0
-##		yield(get_tree().create_timer(1), "timeout")
-##		lock_commands(0)
-#	find_next_char()
-
-#func find_next_char():
-#	if $"Turn Order".active.get_node("Arrow") :
-#		$"Turn Order".active.get_node("Arrow").queue_free()
-#	var array = $"Turn Order".active.get_children()
-#	var last_node
-#	for n in array:
-#		last_node = n
-#	if last_node != $"Turn Order".active.get_node("Bar"):
-#		last_node.queue_free()
-#	if act_ind < $"Turn Order".char_arr.size() - 1 || act_ind < 0:
-#		act_ind += 1
-#	else :
-#		act_ind = 0
-#	var pred_active = $"Turn Order".active
-#	$"Turn Order".active = $"Turn Order".char_arr[act_ind]
-#	var arr = $"Turn Order".char_arr
-#	if $"Turn Order".active.stats.hp <= 0 || $"Turn Order".active.effects.turn_done:
-#		while act_ind < $"Turn Order".char_arr.size() - 1 && (
-#		$"Turn Order".active.stats.hp <= 0 ||
-#		$"Turn Order".active.effects.turn_done): 
-#			act_ind += 1
-#			$"Turn Order".active = $"Turn Order".char_arr[act_ind]
-#			var active = $"Turn Order".active
-##			
-#		if act_ind + 1 == $"Turn Order".char_arr.size() && (
-#		$"Turn Order".char_arr[act_ind].stats.hp <= 0 ||
-#		$"Turn Order".active.effects.turn_done) :
-#			if $"Turn Order".active.effects.turn_done:
-#				reset_turn_order()
-#			for n in $"Turn Order".char_arr:
-#				if (n.stats.hp > 0 && !n.effects.turn_done) && n != $"Turn Order".active:
-#					$"Turn Order".active = n
-#					act_ind = $"Turn Order".char_arr.find($"Turn Order".active)
-#					break
-#	if pred_active == $"Turn Order".active:
-#		if act_ind + 1 < $"Turn Order".char_arr[act_ind + 1]:
-#			$"Turn Order".active = $"Turn Order".char_arr[act_ind + 1]
-#		else:
-#			for n in $"Turn Order".char_arr:
-#				if $"Turn Order".char_arr.find(n) == $"Turn Order".char_arr.size() - 1:
-#					reset_turn_order()
-#				if !n.stats.turn_done && n.stats.hp > 0:
-#					$"Turn Order".active = n
-#					act_ind = $"Turn Order".char_arr.find(n)
-#	var active = $"Turn Order".active
-#	if active.stats.is_enemy:
-#		lock_commands(active.stats.is_enemy)
-#	if ($"Turn Order".active.stats.is_enemy):
-#		enemy_turn += 1
-#	if !check_effects():
-#		if enemy_turn == 1:
-#			if enemy_turn != number_of_enemies($"Turn Order".char_arr):
-#				$"/root/CombatContainer".custom_timer(1, self, "post_wait_turn_next")
-#			else:
-#				$"/root/CombatContainer".custom_timer(1, self, "post_wait_turn_next")
-#		else:
-#			$"/root/CombatContainer".custom_timer(1, self, "post_wait_turn_next")
-
-#func post_wait_turn_next():
-#	set_textbox()
-#	var active = $"Turn Order".active
-#	set_active_pointer($"Turn Order".active)
-#	var SUCA =  $"Turn Order".active
-#	is_npc(SUCA)
-#	reset_turn_order()
-	
-#func is_npc(active : Job):
-#	if active.starting_stats.is_enemy :
-#		if active.stats.hp > 0:
-#			match randi() % 5 :
-#				4:
-#					active.do_skill.find_skill("Special", true)
-#				_:
-#					active.do_skill.find_skill("Attack", true)
-#			$winscreen/winlose.check_combat_over()
-#			$"/root/CombatContainer".custom_timer(1.5, $TurnNext, "_on_Button_turn_next")
-#		else:
-#			$TurnNext._on_Button_turn_next()
-
-#func number_of_enemies(char_arr):
-#	var number = 0
-#	for n in char_arr :
-#		if n.stats.is_enemy :
-#			if n.stats.hp > 0:
-#				number += 1
-#	return number
 
 func set_active_pointer(active : Job) :
 	var arrow = Sprite.new()
@@ -145,10 +56,10 @@ func check_effects():
 	
 	if act_effects.guard != 0:
 		act_effects.f_guard()
-	if act_effects.stun != 0:
-		if act_effects.check_stun():
-			return 1
-		return 0
+#	if act_effects.stun != 0:
+#		if act_effects.check_stun():
+#			return 1
+#		return 0
 	if act_effects.poison != 0:
 		act_effects.check_poison()
 	if act_effects.regen != 0:
@@ -163,14 +74,6 @@ func check_effects():
 		act_effects.check_weak()
 	act_effects.color_manager()
 
-#func reset_turn_order():
-#	var turn_end = 1
-#	for n in $"Turn Order".char_arr:
-#		if !n.effects.turn_done && n.stats.hp > 0:
-#			turn_end = 0
-#	if turn_end:
-#		for n in $"Turn Order".char_arr:
-#			n.effects.turn_done = 0
 
 func lock_commands(boolean):
 	get_tree().root.get_node("CombatContainer/HBoxContainer/InputWindow/VBoxContainer/Attack").disabled = boolean
@@ -179,12 +82,85 @@ func lock_commands(boolean):
 
 
 func _on_Button_pressed():
-	match $winscreen/winlose.check_combat_over():
+	var tree
+	match combat_end:
 		2:
-			get_tree().change_scene("res://Gui.tscn")
+			stats_update()
+			if GlobalVar.choiceNum == GlobalVar.choiceCap:
+				if GlobalVar.stage == 3:
+					tree = get_tree().change_scene("res://export_combat/EndGame.tscn")
+					return
+				GlobalVar.stage += 1
+				GlobalVar.choiceNum = 0
+				GlobalVar.choiceCap = 10
+				GlobalVar.oldtomeflag = 0
+				if GlobalVar.stage != 3:
+					tree = get_tree().change_scene("res://CharUnlock.tscn")
+			else:
+				GuiMusic.play_gui_music()
+				GlobalVar.oldtomeflag = 0
+				tree = get_tree().change_scene("res://Gui.tscn")
 		_:
-			get_tree().change_scene("res://Menu.tscn")
-	
+			reset_stats()
+			tree = get_tree().change_scene("res://Menu.tscn")
+
+func stats_update():
+	for player in $"Turn Order".char_arr:
+		if player.stats.party_member == GlobalVar.firstmember:
+			if player.stats.hp > 0:
+				GlobalVar.firstmemberlife = player.stats.hp
+			else :
+				GlobalVar.firstmemberlife = 1
+			GlobalVar.firstmemberfirstmovePP = player.skill_array[1].usage 
+			GlobalVar.firstmembersecondmovePP = player.skill_array[2].usage 
+			GlobalVar.firstmemberthirdmovePP = player.skill_array[3].usage 
+		if player.stats.party_member == GlobalVar.secondmember:
+			if player.stats.hp > 0:
+				GlobalVar.secondmemberlife = player.stats.hp
+			else :
+				GlobalVar.secondmemberlife = 1
+			GlobalVar.secondmemberfirstmovePP = player.skill_array[1].usage 
+			GlobalVar.secondmembersecondmovePP = player.skill_array[2].usage 
+			GlobalVar.secondmemberthirdmovePP = player.skill_array[3].usage 
+		if player.stats.party_member == GlobalVar.thirdmember:
+			if player.stats.hp > 0:
+				GlobalVar.thirdmemberlife = player.stats.hp
+			else :
+				GlobalVar.thirdmemberlife = 1
+			GlobalVar.thirdmemberfirstmovePP = player.skill_array[1].usage 
+			GlobalVar.thirdmembersecondmovePP = player.skill_array[2].usage 
+			GlobalVar.thirdmemberthirdmovePP = player.skill_array[3].usage 
+
+func reset_stats():
+	GlobalVar.stage = 1
+	GlobalVar.choiceNum = 0
+	GlobalVar.choiceCap = 10
+	GlobalVar.gold = 0
+	GlobalVar.day = 0
+	GlobalVar.secondmember = "none"
+	GlobalVar.thirdmember = "none"
+	GlobalVar.ancientRune = "none"
+	GlobalVar.enchFeather = "none"
+	GlobalVar.monocle = "none"
+	GlobalVar.oldTome = "none"
+	GlobalVar.oldtomeflag = 0
+	GlobalVar.pocketDagger = "none"
+	GlobalVar.regenStone = "none"
+	InventoryData.item_data["Inv1"] = "none"
+	InventoryData.item_data["Inv2"] = "none"
+	InventoryData.item_data["Inv3"] = "none"
+	InventoryData.item_data["Inv4"] = "none"
+	InventoryData.item_data["Inv5"] = "none"
+	InventoryData.item_data["Inv6"] = "none"
+	GlobalVar.partypoison = false
+	GlobalVar.partyweak = false
+	GlobalVar.partyslow = false
+	GlobalVar.partyregen = false
+	GlobalVar.partyhaste = false
+	GlobalVar.partystrength = false
+	GlobalVar.enemystun = false
+	GlobalVar.enemyweak = false
+
 func set_party():
 	if GlobalVar.firstmember != "none":
 		characs.append(GlobalVar.firstmember)

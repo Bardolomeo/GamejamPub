@@ -13,12 +13,15 @@ func _ready():
 
 func _on_Skill1_pressed():
 	execute_skill(1)
+	$"../Combat".lock_commands(1)
 
 func _on_Skill2_pressed():
 	execute_skill(2)
+	$"../Combat".lock_commands(1)
 
 func _on_Skill3_pressed():
 	execute_skill(3)
+	$"../Combat".lock_commands(1)
 
 func set_skills():
 	for n in 3:
@@ -37,6 +40,8 @@ func set_skill_namedesc(index):
 	if turn_order.active.skill_array[index].usage <= 0:
 		skill_button.disabled = true
 		turn_order.active.skill_array[index].usage = 0
+	else:
+		skill_button.disabled = false
 	skill_button.text = turn_order.active.skill_array[index].skill_name
 	skill_desc.text = ( "Skill Points:    " +
 						String(turn_order.active.skill_array[index].usage) + 
@@ -66,9 +71,11 @@ func _on_Skill2_mouse_entered():
 
 func _on_Skill3_mouse_entered():
 	line_start.text = ""
-	label.text = turn_order.active.skill_array[2].description
+	label.text = turn_order.active.skill_array[3].description
 	line_end.text = ""
 	descwindow.visible = true
 
 func _on_Skill_mouse_exited():
 	descwindow.visible = false
+
+

@@ -3,8 +3,6 @@ extends SkillsNode
 class_name DoSkillNode
 
 signal round_end
-
-var sk_value : Array
 	
 func _ready():
 	randomize()
@@ -16,9 +14,6 @@ func find_skill(name : String, is_enemy : bool) :
 	var skills = $"../Skills".get_children()
 	var targets : Array
 	
-	for sk in skills :
-		sk_value.append(sk.damage)
-		sk.damage = sk.damage * $"../..".active.stats.atk_mult
 	while skills[i].skill_name != name && i < skills.size():
 		i += 1
 	if i < skills.size() :
@@ -30,7 +25,7 @@ func find_skill(name : String, is_enemy : bool) :
 	if targets == [null]:
 		return 
 	if is_enemy :
-		execute(skill, targets, sk_value)
+		execute(skill, targets)
 
 func select_target(skill, is_enemy):
 	var targets : Array
@@ -152,7 +147,7 @@ func players_array():
 			player_arr.append(n)
 	return player_arr
 
-func execute(skill : SkillsNode, targets : Array, sk_value : Array):
+func execute(skill : SkillsNode, targets : Array):
 	var hit_or_miss : float
 	
 	if targets == [null]:
@@ -160,16 +155,13 @@ func execute(skill : SkillsNode, targets : Array, sk_value : Array):
 	if skill.usage > 0 || skill.usage == -1 :
 		if $"..".stats.is_enemy :
 			enemy_blink_blue($"..")
-	skill_range(skill)
-	skill_target(skill, targets, sk_value)
+		skill_range(skill)
+		skill_target(skill, targets)
 	
-func post_wait_execute(skill, targets, sk_value):
+func post_wait_execute(skill, targets):
 	if skill.usage > 0 :
 		skill.usage -= 1
 	var i = 0
-	for n in $"../Skills".get_children():
-		n.damage = sk_value[i]
-		i += 1
 	if $"/root/CombatContainer/Combat/winscreen/winlose".check_combat_over():
 		return
 	$"/root/CombatContainer/Combat/TurnNext"._on_Button_turn_next()
@@ -183,9 +175,9 @@ func is_multiattack(skill : SkillsNode, targets : Array):
 			or_color.append(target.self_modulate)
 		for i in 3:
 			for target in targets :
-				hit_or_miss = (skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
+				hit_or_miss = 1 #(skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
 				if rand_range(0.0, 1.0) < hit_or_miss :
-					var prov : int = skill.damage / target.stats.def_mult
+					var prov : int = (skill.damage * $"../..".active.stats.atk_mult) / target.stats.def_mult
 					target.stats.hp -= prov
 					show_damage(target, prov)
 					target.sprite2d.play("hurt")
@@ -193,7 +185,7 @@ func is_multiattack(skill : SkillsNode, targets : Array):
 					$"/root/CombatContainer".set_effect(skill.effect, target)
 				else :
 					on_miss(target)
-			yield(get_tree().create_timer(0.5), "timeout")
+			yield(get_tree().create_timer(0.3), "timeout")
 		for color in or_color:
 			targets[or_color.find(color)].self_modulate = color
 		
@@ -201,25 +193,27 @@ func is_multiattack(skill : SkillsNode, targets : Array):
 func is_single_or_aoe(skill : SkillsNode, targets : Array):
 	var hit_or_miss : float
 	for target in targets :
-		if target.stats.hp > 0:
-			hit_or_miss = (skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
-			if rand_range(0.0, 1.0) < hit_or_miss :
-				var prov : int
-				if skill.effect == "miss_health" :
-					prov = $"../..".active.stats.hp_max - $"../..".active.stats.hp
-				else:
-					prov = skill.damage / target.stats.def_mult
-				target.stats.hp -= prov
-				if skill.effect == "random_nerf":
-					set_random_effect(skill.effect, target)
-					skill.effect = "random_nerf"
-				else:
-					$"/root/CombatContainer".set_effect(skill.effect, target)
-				show_damage(target, prov)
-				target.sprite2d.play("hurt")
-				enemy_blink_red(target)
-			else :
-				on_miss(target)
+		if is_instance_valid(target):
+			if target.stats.hp > 0:
+				hit_or_miss = (skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
+				if rand_range(0.0, 1.0) < hit_or_miss :
+					var prov : int
+					if skill.effect == "miss_health" :
+						prov = (($"../..".active.stats.hp_max - $"../..".active.stats.hp) * 
+								$"../..".active.stats.atk_mult) / target.stats.def_mult  
+					else:
+						prov = (skill.damage * $"../..".active.stats.atk_mult) / target.stats.def_mult
+					target.stats.hp -= prov
+					if skill.effect == "random_nerf":
+						set_random_effect(skill.effect, target)
+						skill.effect = "random_nerf"
+					else:
+						$"/root/CombatContainer".set_effect(skill.effect, target)
+					show_damage(target, prov)
+					target.sprite2d.play("hurt")
+					enemy_blink_red(target)
+				else :
+					on_miss(target)
 
 func is_single_or_aoe_wsbuff(skill : SkillsNode, targets : Array):
 	var hit_or_miss : float
@@ -228,7 +222,7 @@ func is_single_or_aoe_wsbuff(skill : SkillsNode, targets : Array):
 			hit_or_miss = (skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
 			if rand_range(0.0, 1.0) < hit_or_miss :
 				var prov : int
-				prov = skill.damage / target.stats.def_mult
+				prov = (skill.damage * $"../..".active.stats.atk_mult) / target.stats.def_mult
 				target.stats.hp -= prov
 				show_damage(target, prov)
 				target.sprite2d.play("hurt")
@@ -243,7 +237,7 @@ func is_single_or_aoe_wtbuff(skill : SkillsNode, targets : Array):
 		if target.stats.hp > 0:
 			hit_or_miss = (skill.hit_rate + (1 - target.stats.speed * target.stats.speed_mult)) / 2
 			if rand_range(0.0, 1.0) < hit_or_miss :
-				var prov : int = skill.damage / target.stats.def_mult
+				var prov : int = (skill.damage * $"../..".active.stats.atk_mult) / target.stats.def_mult
 				target.stats.hp -= prov
 #				$"../../../winscreen/winlose".check_combat_over()
 				show_damage(target, prov)
@@ -324,7 +318,6 @@ func _destroy_buttons(array : Array, enemies : Array):
 			n.player.play("DEFAULT")
 	for n in array:
 		n.queue_free()
-#	_disable_commands()
 	
 func add_button_single(n : Job, skill : SkillsNode):
 	var button = Button.new()
@@ -333,7 +326,7 @@ func add_button_single(n : Job, skill : SkillsNode):
 	button.rect_position = Vector2(-64, -64)
 	button.self_modulate = Color(1,1,1,0)
 	var ret = [n]
-	button.connect("pressed", self, "execute", [skill, ret, sk_value])
+	button.connect("pressed", self, "execute", [skill, ret])
 	return (button)
 
 func add_button_aoe(n : Job, targets : Array, skill : SkillsNode):
@@ -342,7 +335,7 @@ func add_button_aoe(n : Job, targets : Array, skill : SkillsNode):
 	button.rect_size = Vector2(128, 128)
 	button.rect_position = Vector2(-64, -64)
 	button.self_modulate = Color(1,1,1,0)
-	button.connect("pressed", self, "execute", [skill, targets, sk_value])
+	button.connect("pressed", self, "execute", [skill, targets])
 #	button.connect("pressed", get_tree().root.get_node("CombatContainer/Combat/TurnNext"), "_on_Button_turn_next")
 	return (button)
 
@@ -365,6 +358,8 @@ func show_damage(target : Job, damage : int):
 	animation_node.label.text = String(damage2)
 	animation_node.position += Vector2(-60, -50)
 	animation_node.player.play("HP")
+	yield(get_tree().create_timer(0.1), "timeout")
+	animation_node.show()
 	
 func show_heal(target, damage):
 	var scene = load("res://export_combat/Misc/hp_animation_2.tscn")
@@ -374,6 +369,8 @@ func show_heal(target, damage):
 	animation_node.label.text = String(damage)
 	animation_node.position += Vector2(-60, -50)
 	animation_node.player.play("HPup")
+	yield(get_tree().create_timer(0.1), "timeout")
+	animation_node.show()
 
 func _remove_label():
 	var label = $"../hp"
@@ -388,6 +385,8 @@ func on_miss(target : Job):
 	animation_node.position += Vector2(-60, -50)
 	animation_node.player.play("HP")
 	animation_node.label.add_color_override("font_color", Color(1, 1, 1))
+	yield(get_tree().create_timer(0.1), "timeout")
+	animation_node.show()
 	
 func enemy_blink_blue(enemy : Job):
 	var or_color =  enemy.sprite2d.self_modulate
@@ -433,7 +432,7 @@ func skill_range(skill):
 #		yield(get_tree().create_timer(0.8), "timeout")
 #		_disable_commands()
 
-func skill_target(skill, targets, skvalue):
+func skill_target(skill, targets):
 	if skill.target == "single" || skill.target == "aoe":
 		is_single_or_aoe(skill, targets)
 	elif skill.target == "multiattack":
@@ -444,5 +443,5 @@ func skill_target(skill, targets, skvalue):
 		is_single_or_aoe_wsbuff(skill, targets)
 	elif skill.target == "single_wtb" || skill.target == "aoe_wtb":
 		is_single_or_aoe_wtbuff(skill, targets)
-	post_wait_execute(skill, targets, sk_value)
+	post_wait_execute(skill, targets)
 	

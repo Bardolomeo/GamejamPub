@@ -19,7 +19,7 @@ font_data = SubResource( 18 )
 font_path = "res://Assets/Fonts/BetterPixels.ttf"
 
 [sub_resource type="DynamicFont" id=21]
-size = 60
+size = 45
 font_data = SubResource( 20 )
 
 [sub_resource type="DynamicFontData" id=10]

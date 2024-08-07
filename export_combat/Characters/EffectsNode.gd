@@ -21,21 +21,25 @@ func _process(delta):
 		$"..".sprite2d.stop()
 		
 func set_stun(target): 
+	if !is_instance_valid(target):
+		return
 	target.effects.stun = 1
 	target.sprite2d.stop()
 	target.sprite2d.self_modulate = Color(1.5,1.5,1.5)
 
-func check_stun():
-		if stun == 1:
-			stun = 0
-			$"../AnimatedSprite".self_modulate = Color(1,1,1)
-			$"../AnimatedSprite".play("default")
-			yield(get_tree().create_timer(1), "timeout")
-			$"../../../TurnNext"._on_Button_turn_next()
-			return 1
-		return 0
+#func check_stun():
+#		if stun == 1:
+#			stun = 0
+#			$"../AnimatedSprite".self_modulate = Color(1,1,1)
+#			$"../AnimatedSprite".play("default")
+##			$"../../../TurnNext"._on_Button_turn_next()
+#			yield(get_tree().create_timer(1), "timeout")
+#			return 1
+#		return 0
 		
 func set_poison(target):
+	if !is_instance_valid(target):
+		return
 	target.effects.poison += 3
 	target.sprite2d.self_modulate = Color8(255, 0, 255)
 
@@ -44,13 +48,15 @@ func check_poison():
 			poison -= 1
 			job.stats.hp -= 5
 			$"../DoSkill".show_damage(job, 5)
-#			if job.stats.hp <= 0:
-#				$"/root/CombatContainer/Combat/winscreen/winlose".check_combat_over()
+			if job.stats.hp <= 0:
+				$"/root/CombatContainer/Combat/TurnNext".find_next_char()
 			if poison == 1:
 				$"../AnimatedSprite".self_modulate = Color(1,1,1)
 				poison -= 1
 
 func set_regen(target): 
+	if !is_instance_valid(target):
+		return
 	target.effects.regen += 3 
 	target.sprite2d.self_modulate = Color8(0, 255, 0)
 
@@ -68,6 +74,8 @@ func check_regen():
 				regen -= 1
 				
 func set_haste(target): 
+	if !is_instance_valid(target):
+		return
 	if target.effects.slow == 1 && target.effects.haste == 1:
 		target.effects.p_speed = target.stats.speed
 	target.effects.haste += 3
@@ -87,6 +95,8 @@ func check_haste():
 			$"..".sprite2d.self_modulate = Color(1,1,1)
 
 func set_slow(target):
+	if !is_instance_valid(target):
+		return
 	p_color = $"..".sprite2d.self_modulate
 	if target.effects.haste == 1 && target.effects.slow == 1:
 		target.effects.p_speed = target.stats.speed
@@ -102,52 +112,61 @@ func check_slow():
 			$"../AnimatedSprite".self_modulate = Color(1,1,1)
 
 func set_stren(target):
+	if !is_instance_valid(target):
+		return
 	if target.effects.stren == 1 && target.effects.weak == 1:
 		target.effects.p_stren = target.stats.atk_mult
 	target.effects.stren += 3
-	target.stats.atk_mult = 1.3
-	target.sprite2d.scale = Vector2(1.3, 1.3)
+	target.stats.atk_mult *= 1.3
+	if target.stats.is_boss:
+		target.sprite2d.scale = Vector2(2, 2)
+	else:
+		target.sprite2d.scale = Vector2(1.3, 1.3)
 
 func check_stren():
 		if stren > 1 && weak == 0:
 			stren -= 1
-			$"..".stats.atk_mult = 1.3
 		elif stren > 1 && weak > 0:
 			stren -= 1
-			$"..".stats.atk_mult = 1
 		elif stren == 0:
 			stren -= 1
 		if stren == 1 && weak == 0:
-			$"..".stats.atk_mult = 1
-			$"../AnimatedSprite".scale = Vector2(1, 1)
+			$"..".stats.atk_mult /= 1.3
+			if $"..".stats.is_boss:
+				$"../AnimatedSprite".scale = Vector2(1.7, 1.7)
+			else:
+				$"../AnimatedSprite".scale = Vector2(1, 1)
 		elif stren == 1 && weak > 0:
-			$"..".stats.atk_mult = 0.7
-			$"../AnimatedSprite".scale = Vector2(1, 1)	
+			$"..".stats.atk_mult /= 1.69
+			$"../AnimatedSprite".scale = Vector2(0.5, 0.5)	
 		if stren == 1:
 			stren -= 1	
 
 func set_weak(target):
+	if !is_instance_valid(target):
+		return
 	if target.effects.weak == 1 && target.effects.stren == 1:
 		target.effects.p_stren = target.stats.atk_mult
 	target.effects.weak += 3
-	target.stats.atk_mult = 0.7
-	target.sprite2d.scale = Vector2(0.7, 0.7)
+	target.stats.atk_mult /= 1.3
+	target.sprite2d.scale = Vector2(0.5, 0.5)
 
 func check_weak():
 		if weak > 1 && stren == 0:
 			weak -= 1
-			$"..".stats.atk_mult = 0.7
 		elif weak > 1 && stren > 0:
 			weak -= 1
-			$"..".stats.atk_mult = 1
 		elif weak == 0:
 			weak -= 1
 		if weak == 1 && stren == 0:
-			$"..".stats.atk_mult = 1
+			$"..".stats.atk_mult *= 1.3
 			$"../AnimatedSprite".scale = Vector2(1, 1)
 		elif weak == 1 && stren > 0:
-			$"..".stats.atk_mult = 1.3
-			$"../AnimatedSprite".scale = Vector2(1, 1)
+			$"..".stats.atk_mult *= 1.69
+			if $"..".stats.is_boss:
+				$"../AnimatedSprite".scale = Vector2(1.7, 1.7)
+			else:
+				$"../AnimatedSprite".scale = Vector2(1, 1)
 		if weak == 1:
 			weak -= 1
 func f_guard():
@@ -165,7 +184,7 @@ func f_guard():
 	$"../AnimatedSprite".play("defense")
 	$"../AnimatedSprite".self_modulate = Color8(121,127,189)
 	p_guard = $"..".stats.def_mult
-	$"..".stats.def_mult = 2.0
+	$"..".stats.def_mult = 1.4
 
 func color_manager():
 	if guard != 0:
@@ -181,9 +200,15 @@ func color_manager():
 	elif slow != 0:
 		$"../AnimatedSprite".self_modulate = Color.orange
 	elif stren != 0:
-		$"../AnimatedSprite".scale = Vector2(1.3, 1.3)
+		if $"..".stats.is_boss:
+			$"../AnimatedSprite".scale = Vector2(1.7, 1.7)
+		else:			
+			$"../AnimatedSprite".scale = Vector2(1.5, 1.5)
 	elif weak != 0:
 		$"../AnimatedSprite".scale = Vector2(0.7, 0.7)
 	if (guard + regen + poison + stun + haste + slow + stren + weak) == 0:
 		$"../AnimatedSprite".self_modulate = Color.white
-		$"../AnimatedSprite".scale = Vector2(1, 1)
+		if $"..".stats.is_boss:
+			$"../AnimatedSprite".scale = Vector2(1.7, 1.7)	
+		else:
+			$"../AnimatedSprite".scale = Vector2(1, 1)

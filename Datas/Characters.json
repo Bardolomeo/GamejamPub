@@ -7,19 +7,19 @@
     },
     "Ch2": {
       "classe": "The Morphed",
-      "vita": "120",
-      "velocità": "0.4",
-      "attacco base": "25"
+      "vita": "100",
+      "velocità": "0.3",
+      "attacco base": "15"
     },
     "Ch3": {
       "classe": "The Mystique",
       "vita": "60",
-      "velocità": "0.6",
-      "attacco base": "15"
+      "velocità": "0.8",
+      "attacco base": "10"
     },
     "Ch4": {
       "classe": "The Armless",
-      "vita": "200",
+      "vita": "60",
       "velocità": "0.4",
       "attacco base": "10"
     },
@@ -31,20 +31,20 @@
     },
      "Ch6": {
       "classe": "The Holed",
-      "vita": "100",
-      "velocità": "0.4",
-      "attacco base": "10"
+      "vita": "90",
+      "velocità": "0.5",
+      "attacco base": "15"
     },
       "Ch7": {
       "classe": "The Blade",
-      "vita": "40",
+      "vita": "50",
       "velocità": "0.7",
       "attacco base": "25"
     },
      "Ch8": {
       "classe": "The Frost",
       "vita": "40",
-      "velocità": "0.5",
+      "velocità": "1.0",
       "attacco base": "30"
     },
     "Ch9": {

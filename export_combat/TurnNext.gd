@@ -11,6 +11,10 @@ var aind : int = 0
 func _ready():
 	randomize()
 	aind = 0
+	yield(get_tree().create_timer(1), "timeout")
+	if $"../Turn Order".active.stats.is_enemy:
+		active = $"../Turn Order".active
+		is_enemy_turn()
 	
 func _on_Button_turn_next():
 	set_turn_start_vars()
@@ -22,11 +26,17 @@ func _on_Button_turn_next():
 	if !(handle_haste_missplacement()):
 		find_next_char()
 	$"..".set_active_pointer(active)
+	$"../winscreen/winlose".check_combat_over()
 	$"..".set_textbox()
 	if active.stats.is_enemy:
 		is_enemy_turn()
 	if active.stats.is_enemy == false:
-		$"..".lock_commands(0)
+		if active.effects.stun == 0:
+			$"..".lock_commands(0)
+		else:
+			$"..".lock_commands(1)
+			yield(get_tree().create_timer(0.5), "timeout")
+			check_stun()
 
 func set_turn_start_vars():
 	active = $"../Turn Order".active
@@ -80,9 +90,18 @@ func check_round_end():
 
 func is_enemy_turn():
 	yield(get_tree().create_timer(1), "timeout")
-#	if !$"../winscreen/winlose".check_combat_over():
-	match randi() % 5:
-		4:
+	if active.effects.stun == 1:
+		check_stun()
+		return
+	match randi() % 4:
+		3:
 			active.get_node("DoSkill").find_skill("Special", 1)
 		_:
 			active.get_node("DoSkill").find_skill("Attack", 1)
+
+func check_stun():
+	active.effects.stun = 0
+	active.sprite2d.play("default")
+	active.sprite2d.self_modulate = Color(1,1,1)
+	_on_Button_turn_next()
+	return 1

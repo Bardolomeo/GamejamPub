@@ -73,6 +73,7 @@ anims/fade = SubResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 6 )
+volume_db = -15.0
 
 [connection signal="change_bg" from="TextBox" to="." method="_on_TextBox_change_bg"]
 [connection signal="textbox_done" from="TextBox" to="." method="_on_TextBox_textbox_done"]

@@ -1,38 +1,44 @@
 {
-	"Inv1": {
-		"Item": 0,
-		"Name": "Monocle",
-		"Multiplier": 1.2,
-		"Type": "precisione"
-	},
-	"Inv2": {
-		"Item": 1,
-		"Name": "Pocket dagger",
-		"Multiplier": 1.1,
-		"Type": "danno"
-	},
-	"Inv3": {
-		"Item": 2,
-		"Name": "Enchanted feather",
-		"Multiplier": 1.2,
-		"Type": "velocità"
-	},
-	"Inv4": {
-		"Item": 3,
-		"Name": "Regenerative stone",
-		"Multiplier": 1.2,
-		"Type": "cure"
-	},
-	"Inv5": {
-		"Item": 4,
-		"Name": "Ancient rune",
-		"Multiplier": 1.1,
-		"Type": "vita max"
-	},
-	"Inv6": {
-		"Item": 5,
-		"Name": "Old tome",
-		"Multiplier": 1.2,
-		"Type": "skillpoints squadra"
-	}
+    "Inv1": {
+        "Item": 0,
+        "Name": "Monocle",
+        "Multiplier": 1.2,
+        "desc": "Enemies start the fight with weak status",
+        "Type": "enemyes status"
+    },
+    "Inv2": {
+        "Item": 1,
+        "Name": "Pocket dagger",
+        "Multiplier": 1.1,
+        "desc": "Increase damage", 
+        "Type": "danno"
+    },
+    "Inv3": {
+        "Item": 2,
+        "Name": "Enchanted feather",
+        "Multiplier": 1.2,
+        "desc": "Increase speed",
+        "Type": "velocitÃ "
+    },
+    "Inv4": {
+        "Item": 3,
+        "Name": "Regenerative stone",
+        "Multiplier":null,
+        "desc": "Start the fight with regen on party",
+        "Type": "status"
+    },
+    "Inv5": {
+        "Item": 4,
+        "Name": "Ancient rune",
+        "Multiplier": 1.1,
+        "desc":"Increase max HP of party",
+        "Type": "vita max"
+    },
+    "Inv6": {
+        "Item": 5,
+        "Name": "Old tome",
+        "Multiplier": 1,
+        "desc": "Start the fight with a random positive status effect on party",
+        "Type": "status"
+    }
 }

@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 1.0
-damage = 5
+hit_rate = 1.2
+damage = 10
 usage = 5
 max_usage = 5
 _range = "ranged"
-target = "single"
+target = "single_wsb"
 effect = "stren"
 skill_name = "Strength Drain"
-description = "This skill inflicts small damage to one enemy to set [Strength] status"
+description = "This skill inflicts small damage to one enemy, set [Strength] status on themself"

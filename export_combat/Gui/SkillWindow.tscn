@@ -207,4 +207,5 @@ visible = false
 [connection signal="mouse_exited" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Skill2" to="." method="_on_Skill_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Skill2" to="." method="_on_Skill2_pressed"]
 [connection signal="mouse_entered" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3/Skill3" to="." method="_on_Skill3_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3/Skill3" to="." method="_on_Skill_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3/Skill3" to="." method="_on_Skill3_pressed"]

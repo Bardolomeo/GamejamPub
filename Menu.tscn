@@ -136,6 +136,7 @@ script = ExtResource( 2 )
 position = Vector2( 960, 540 )
 frames = SubResource( 9 )
 animation = "menu"
+frame = 2
 
 [node name="Title" type="Label" parent="AnimatedSprite"]
 anchor_left = 0.5

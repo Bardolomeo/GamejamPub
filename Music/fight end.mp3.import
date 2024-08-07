@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fight end.mp3-47cdfb1f4cd2e2aa376c96d01fecc4db.mp3str"
+
+[deps]
+
+source_file="res://Music/fight end.mp3"
+dest_files=[ "res://.import/fight end.mp3-47cdfb1f4cd2e2aa376c96d01fecc4db.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

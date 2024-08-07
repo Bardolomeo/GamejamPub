@@ -12,7 +12,7 @@
 		},
 		"Skill3": {
 			"nome": "Scuffle",
-			"effect": "Attacca 2 volte lo stesso bersaglio",
+			"effect": "Attacca 3 volte lo stesso bersaglio",
 			"usage": 3,
 		}
 	},
@@ -35,18 +35,18 @@
 	},
 	"Ch3": {
 		"Skill1": {
-			"nome": "Speed boost",
-			"effect": "Aumenta la velocità di un party member",
-			"usage": 2,
+			"nome": "Adverse Fate",
+			"effect": "Attacca aoe e applica slow",
+			"usage": 3,
 		},
 		"Skill2": {
-			"nome": "Regen",
-			"effect": "Cura per turno un party member",
-			"usage": 4,
+			"nome": "Sinister Hope",
+			"effect": "Applica regen a tutti i party member",
+			"usage": 2,
 		},
 		"Skill3": {
-			"nome": "Heal",
-			"effect": "Cura un party member",
+			"nome": "Body Modification",
+			"effect": "Cura di molto un party member e applica regen",
 			"usage": 3,
 		}
 	},
@@ -62,15 +62,15 @@
 			"usage": 4,
 		},
 		"Skill3": {
-			"nome": "Self care",
+			"nome": "Shock Terapy",
 			"effect": "Cura se stesso",
-			"usage": 4,
+			"usage": 2,
 		}
 	},
 	"Ch5": {
 		"Skill1": {
 			"nome": "Multiple injection",
-			"effect": "Attacca 2 volte lo stesso bersaglio",
+			"effect": "Attacca 3 volte lo stesso bersaglio",
 			"usage": 4,
 
 		},
@@ -94,7 +94,7 @@
 		"Skill2": {
 			"nome": "Hole trance",
 			"effect": "Infligge Stun su un nemico",
-			"usage": 4,
+			"usage": 3,
 		},
 		"Skill3": {
 			"nome": "Terrifying presence",
@@ -104,18 +104,18 @@
 	},
 	"Ch7": {
 		"Skill1": {
-			"nome": "Slash",
-			"effect": "Infligge sanguinamento ad un nemico",
+			"nome": "Venom Slash",
+			"effect": "Infligge avvelenamento a tutti i nemici",
 			"usage": 5,
 		},
 		"Skill2": {
 			"nome": "Brawl",
-			"effect": "Attacca 2 volte lo stesso bersaglio",
+			"effect": "Attacca 3 volte lo stesso bersaglio",
 			"usage": 4,
 		},
 		"Skill3": {
-			"nome": "Lightweight",
-			"effect": "Buff velocità su se stesso",
+			"nome": "Blade Sharpening",
+			"effect": "Attacca un nemico e ottieni Strenght",
 			"usage": 3,
 		}
 	},
@@ -124,18 +124,15 @@
 			"nome": "Diamond dust",
 			"effect": "Attacca tutti i nemici",
 			"usage": 1,
-			"accuracy": 0.9,
-			"type": "AttackAll"
 		},
 		"Skill2": {
 			"nome": "Permafrost",
 			"effect": "Stunna un nemico",
-			"damage": 0,
 			"usage": 3,
 		},
 		"Skill3": {
 			"nome": "Booster haze",
-			"effect": "Aumenta la precisione di un party member",
+			"effect": "Attacca un nemico e applica Haste su tutti i party member",
 			"usage": 4,
 		}
 	},

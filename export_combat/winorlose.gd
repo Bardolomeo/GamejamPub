@@ -13,15 +13,17 @@ func check_combat_over():
 			wol("You Lose!")
 			$"/root/CombatContainer".get_node("HBoxContainer").visible = false
 			$"/root/CombatContainer".get_node("Sprite").visible = false
-#			set_next_scene()
 			$"../../Turn Order".active.stats.is_enemy = false
+			$"/root/CombatContainer/Combat".combat_end = 1
 			return 1
 		2: 
 			wol("You Win!")
 			$"/root/CombatContainer".get_node("HBoxContainer").visible = false
 			$"/root/CombatContainer".get_node("Sprite").visible = false
-#			set_next_scene()
-			return 2
+			$"../../Turn Order".active.stats.is_enemy = false
+			$"/root/CombatContainer/Combat".combat_end = 2
+			return 1
+	return 0
 
 func check_combat_end(arr : Array):
 	var players : Array

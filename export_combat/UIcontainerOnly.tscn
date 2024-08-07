@@ -11,7 +11,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Theme" id=11]
 
@@ -33,13 +33,15 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFontData" id=13]
 font_path = "res://Assets/Fonts/BetterPixels.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 13 )
 
 [node name="HBoxContainer" type="HBoxContainer"]

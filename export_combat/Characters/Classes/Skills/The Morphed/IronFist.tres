@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-hit_rate = 0.9
+hit_rate = 1.1
 damage = 20
 usage = 3
 max_usage = 3
@@ -12,4 +12,4 @@ _range = "melee"
 target = "single_wsb"
 effect = "guard"
 skill_name = "Iron Fist"
-description = "Damage an enemy and set defense on himself"
+description = "Damage an enemy and set [defense] on himself"

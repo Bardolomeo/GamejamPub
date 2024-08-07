@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Classes/Starting stats/starting_stats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hp_max = 90
+speed = 0.5
+gold = 0
+job = "The Holed"
+is_enemy = false
+atk_mult = 1.0
+def_mult = 1.0
+speed_mult = 1.0

@@ -17,7 +17,7 @@ func _on_Skill1_pressed():
 
 func _on_Skill2_pressed():
 	line_start.text = ""
-	label.text = "This is the second skill description, hello!"
+	label.text = "This is the second skill description, hello! DKFBGDIBGFIDEGBFIJDBIJDKBDJIBGDIJGBDIOGB"
 	line_end.text = ""
 	descwindow.visible = true
 

@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-hp_max = 40
-speed = 0.5
+hp_max = 10
+speed = 0.7
 gold = 0
 job = "Aracno"
 is_enemy = true

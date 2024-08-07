@@ -1,0 +1,44 @@
+{
+    "Inv1": {
+        "Item": 0,
+        "Name": "none",
+        "Multiplier": 1.2,
+        "desc": "none",
+        "Type": "enemyes status"
+    },
+    "Inv2": {
+        "Item": 1,
+        "Name": "none",
+        "Multiplier": 1.1,
+        "desc": "none", 
+        "Type": "danno"
+    },
+    "Inv3": {
+        "Item": 2,
+        "Name": "none",
+        "Multiplier": 1.2,
+        "desc": "none",
+        "Type": "velocitÃ "
+    },
+    "Inv4": {
+        "Item": 3,
+        "Name": "none",
+        "Multiplier":"none",
+        "desc": "none",
+        "Type": "status"
+    },
+    "Inv5": {
+        "Item": 4,
+        "Name": "none",
+        "Multiplier": 1.1,
+        "desc":"none",
+        "Type": "vita max"
+    },
+    "Inv6": {
+        "Item": 5,
+        "Name": "none",
+        "Multiplier": 1,
+        "desc": "none",
+        "Type": "status"
+    }
+}

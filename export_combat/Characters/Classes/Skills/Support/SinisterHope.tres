@@ -5,11 +5,11 @@
 [resource]
 script = ExtResource( 1 )
 hit_rate = 2.0
-damage = 15
-usage = 5
-max_usage = 5
+damage = 5
+usage = 3
+max_usage = 3
 _range = "ranged"
-target = "ally"
-effect = "cure"
+target = "aoe_wtb"
+effect = "regen"
 skill_name = "Sinister Hope"
-description = "Heal one ally"
+description = "Target one enemie and apply [Regen] to all party "

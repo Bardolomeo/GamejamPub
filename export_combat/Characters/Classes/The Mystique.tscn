@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle10.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle3.png" type="Texture" id=13]
-[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/Haste.tres" type="Resource" id=14]
+[ext_resource path="res://export_combat/Characters/Classes/Skills/Support/AdverseFate.tres" type="Resource" id=14]
 [ext_resource path="res://export_combat/Characters/Classes/Skills Scenes/SkillScene_node.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle7.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites 300X/Party/The_Mistique/Idle/Idle4.png" type="Texture" id=17]
@@ -121,6 +121,7 @@ skill_scene = ExtResource( 15 )
 position = Vector2( -1.99998, -10 )
 frames = SubResource( 1 )
 animation = "defense"
+frame = 2
 playing = true
 
 [node name="Stats" type="Node" parent="."]

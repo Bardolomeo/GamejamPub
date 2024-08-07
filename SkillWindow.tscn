@@ -90,12 +90,12 @@ margin_right = 1111.0
 margin_bottom = 304.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer"]
 margin_right = 1091.0
 margin_bottom = 92.0
 size_flags_vertical = 3
 
-[node name="Skill1" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Skill1" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer1"]
 margin_right = 543.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -1264, -445 )
@@ -105,7 +105,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Character Skill 1"
 flat = true
 
-[node name="Skill1Des" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Skill1Des" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer1"]
 margin_left = 547.0
 margin_top = 27.0
 margin_right = 1091.0
@@ -169,6 +169,6 @@ align = 1
 [node name="DescWindow" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Skill1" to="." method="_on_Skill1_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer1/Skill1" to="." method="_on_Skill1_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Skill2" to="." method="_on_Skill2_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3/Skill3" to="." method="_on_Skill3_pressed"]

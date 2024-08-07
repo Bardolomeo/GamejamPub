@@ -169,8 +169,8 @@
     "choices":{
       "A":{
         "desc":"Approach the figure",
-        "result":"You approach the figure, it suddenly stands up, starts screaming, and charges at you, pushing you, then it runs away in the opposite direction. You notice that it has stolen an item from your inventory.",
-        "outcome":"lose_trinket"
+        "result":"You approach the figure, it suddenly stands up, starts screaming, and charges at you, pushing you, then it runs away in the opposite direction. You notice that it has swiped some gold from your pocket.",
+        "outcome":"lose_gold"
       },
       "B":{
         "desc":"Avoid approaching",
@@ -235,7 +235,7 @@
       "B":{
         "desc":"Run away",
         "result":"You decide to flee, hoping to save resources that might come in handy later. You manage to shake them off, but during the run among the rubble, you get injured.",
-        "outcome":"party_poison"
+        "outcome":"small_hurt"
       }
     }
   },

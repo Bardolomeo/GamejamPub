@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://export_combat/Characters/Enemies/Stats/starting_stats_enemies.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hp_max = 30
+speed = 0.4
+gold = 0
+job = "Aracno"
+is_enemy = true
+atk_mult = 1.0
+def_mult = 1.0
+speed_mult = 1.0
+is_boss = false
+difficulty = 0

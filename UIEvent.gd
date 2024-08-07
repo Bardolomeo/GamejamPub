@@ -41,6 +41,9 @@ func pause():
 func _ready():
 	randomize()
 	n = randi() % 18
+	while n == GlobalVar.prevChoice:
+		n = randi() % 18
+	GlobalVar.prevChoice = n
 	print(n)
 	print("Starting state: ready")
 	hide_textbox()
@@ -116,6 +119,106 @@ func _on_Choice1_pressed():
 	change_state(State.READY)
 	hide_textbox()
 	queue_content(EventData.event_data[str(n)]["choices"]["A"]["result"])
+	
+func gain_hp(percentage : int):
+	var maxhp : int = int(CharactersData.ch_data[GlobalVar.firstmember]["vita"])
+	var healamount : int = maxhp * percentage / 100
+	GlobalVar.firstmemberlife += healamount
+	if GlobalVar.firstmemberlife > int(CharactersData.ch_data[GlobalVar.firstmember]["vita"]):
+		GlobalVar.firstmemberlife = int(CharactersData.ch_data[GlobalVar.firstmember]["vita"])
+	if GlobalVar.secondmember != "none":
+		maxhp = int(CharactersData.ch_data[GlobalVar.secondmember]["vita"])
+		healamount = maxhp * percentage / 100
+		GlobalVar.secondmemberlife += healamount
+		if GlobalVar.secondmemberlife > int(CharactersData.ch_data[GlobalVar.secondmember]["vita"]):
+			GlobalVar.secondmemberlife = int(CharactersData.ch_data[GlobalVar.secondmember]["vita"])
+	if GlobalVar.thirdmember != "none":
+		maxhp = int(CharactersData.ch_data[GlobalVar.thirdmember]["vita"])
+		healamount = maxhp * percentage / 100
+		GlobalVar.thirdmemberlife += healamount
+		if GlobalVar.thirdmemberlife > int(CharactersData.ch_data[GlobalVar.thirdmember]["vita"]):
+			GlobalVar.thirdmemberlife = int(CharactersData.ch_data[GlobalVar.thirdmember]["vita"])
+
+func lose_hp(percentage : int):
+	var maxhp : int = int(CharactersData.ch_data[GlobalVar.firstmember]["vita"])
+	var hurtamount : int = maxhp * percentage / 100
+	GlobalVar.firstmemberlife -= hurtamount
+	if GlobalVar.firstmemberlife <= 0:
+		GlobalVar.firstmemberlife = 1
+	if GlobalVar.secondmember != "none":
+		maxhp = int(CharactersData.ch_data[GlobalVar.secondmember]["vita"])
+		hurtamount = maxhp * percentage / 100
+		GlobalVar.secondmemberlife -= hurtamount
+		if GlobalVar.secondmemberlife <= 0:
+			GlobalVar.secondmemberlife = 1
+	if GlobalVar.thirdmember != "none":
+		maxhp = int(CharactersData.ch_data[GlobalVar.thirdmember]["vita"])
+		hurtamount = maxhp * percentage / 100
+		GlobalVar.thirdmemberlife -= hurtamount
+		if GlobalVar.thirdmemberlife <= 0:
+			GlobalVar.thirdmemberlife = 1
+
+func r_fullheal():
+	var membersamount = 0
+	if GlobalVar.thirdmember != "none":
+		membersamount = 3
+	elif GlobalVar.secondmember != "none" && GlobalVar.thirdmember == "none":
+		membersamount = 2
+	elif GlobalVar.secondmember == "none":
+		membersamount = 1
+	var n = randi() % membersamount + 1
+	if n == 1:
+		GlobalVar.firstmemberlife = int(CharactersData.ch_data[GlobalVar.firstmember]["vita"])
+	if n == 2:
+		GlobalVar.secondmemberlife = int(CharactersData.ch_data[GlobalVar.secondmember]["vita"])
+	if n == 3:
+		GlobalVar.thirdmemberlife = int(CharactersData.ch_data[GlobalVar.thirdmember]["vita"])
+
+func gain_PP():
+	GlobalVar.firstmemberfirstmovePP = int(SkillsData.skills_data[GlobalVar.firstmember]["Skill1"]["usage"])
+	GlobalVar.firstmembersecondmovePP = int(SkillsData.skills_data[GlobalVar.firstmember]["Skill2"]["usage"])
+	GlobalVar.firstmemberthirdmovePP = int(SkillsData.skills_data[GlobalVar.firstmember]["Skill3"]["usage"])
+	if GlobalVar.secondmember != "none":
+		GlobalVar.secondmemberfirstmovePP = int(SkillsData.skills_data[GlobalVar.secondmember]["Skill1"]["usage"])
+		GlobalVar.secondmembersecondmovePP = int(SkillsData.skills_data[GlobalVar.secondmember]["Skill2"]["usage"])
+		GlobalVar.secondmemberthirdmovePP = int(SkillsData.skills_data[GlobalVar.secondmember]["Skill3"]["usage"])
+	if GlobalVar.thirdmember != "none":
+		GlobalVar.thirdmemberfirstmovePP = int(SkillsData.skills_data[GlobalVar.thirdmember]["Skill1"]["usage"])
+		GlobalVar.thirdmembersecondmovePP = int(SkillsData.skills_data[GlobalVar.thirdmember]["Skill2"]["usage"])
+		GlobalVar.thirdmemberthirdmovePP = int(SkillsData.skills_data[GlobalVar.thirdmember]["Skill3"]["usage"])
+
+func drain_PP():
+	GlobalVar.firstmemberfirstmovePP -= 1
+	if GlobalVar.firstmemberfirstmovePP < 0:
+		GlobalVar.firstmemberfirstmovePP = 0
+	GlobalVar.firstmembersecondmovePP -= 1
+	if GlobalVar.firstmembersecondmovePP < 0:
+		GlobalVar.firstmembersecondmovePP = 0
+	GlobalVar.firstmemberthirdmovePP -= 1
+	if GlobalVar.firstmemberthirdmovePP < 0:
+		GlobalVar.firstmemberthirdmovePP = 0
+	if GlobalVar.secondmember != "none":
+		GlobalVar.secondmemberfirstmovePP -= 1
+		if GlobalVar.secondmemberfirstmovePP < 0:
+			GlobalVar.secondmemberfirstmovePP = 0
+		GlobalVar.secondmembersecondmovePP -= 1
+		if GlobalVar.secondmembersecondmovePP < 0:
+			GlobalVar.secondmembersecondmovePP = 0
+		GlobalVar.secondmemberthirdmovePP -= 1
+		if GlobalVar.secondmemberthirdmovePP < 0:
+			GlobalVar.secondmemberthirdmovePP = 0
+	if GlobalVar.thirdmember != "none":
+		GlobalVar.thirdmemberfirstmovePP -= 1
+		if GlobalVar.thirdmemberfirstmovePP < 0:
+			GlobalVar.thirdmemberfirstmovePP = 0
+		GlobalVar.thirdmembersecondmovePP -= 1
+		if GlobalVar.thirdmembersecondmovePP < 0:
+			GlobalVar.thirdmembersecondmovePP = 0
+		GlobalVar.thirdmemberthirdmovePP -= 1
+		if GlobalVar.thirdmemberthirdmovePP < 0:
+			GlobalVar.thirdmemberthirdmovePP = 0
+
+
 
 func _on_Choice2_pressed():
 	choice_made = true
@@ -128,66 +231,85 @@ func _on_Choice2_pressed():
 	queue_content(EventData.event_data[str(n)]["choices"]["B"]["result"])
 
 func process_outcome(which_choice : String):
-	if EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "none":
+	if GlobalVar.choiceNum == GlobalVar.choiceCap:
+		get_tree().change_scene(fight_start)
+	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "none":
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "fight_start":
+		GuiMusic.stop_music()
 		get_tree().change_scene(fight_start)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "fight_start_party_weak":
 		GlobalVar.partyweak = true
+		GuiMusic.stop_music()
 		get_tree().change_scene(fight_start)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "fight_start_party_poison":
 		GlobalVar.partypoison = true
+		GuiMusic.stop_music()
 		get_tree().change_scene(fight_start)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "fight_start_party_slow":
 		GlobalVar.partyslow = true
+		GuiMusic.stop_music()
 		get_tree().change_scene(fight_start)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "fight_start_enemy_stun":
 		GlobalVar.enemystun = true
+		GuiMusic.stop_music()
 		get_tree().change_scene(fight_start)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "gold_gain20":
 		GlobalVar.gold = GlobalVar.gold + 20
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "small_heal":
-		#Heal party 15%
+		gain_hp(15)
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "medium_heal":
-		#Heal party 30%
+		gain_hp(30)
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "one_member_full_heal":
-		#Fully heal a random party member
+		r_fullheal()
+		get_tree().change_scene(next_scene)
+	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "small_hurt":
+		lose_hp(15)
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "medium_hurt":
-		#Damage party 30% of current life (to avoid killing party members from it)
+		lose_hp(30)
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "party_weak":
-		#Inflict weakness on the party in the next combat
+		GlobalVar.partyweak = true
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "party_poison":
-		#Inflict poison on the party in the next combat
+		GlobalVar.partypoison = true
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "enemy_weak":
-		#Inflict weakness on all enemies in the next combat
+		GlobalVar.enemyweak = true
 		get_tree().change_scene(next_scene)
-	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "lose_trinket":
-		#Lose random trinket (if there are any)
+	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "lose_gold":
+		GlobalVar.gold -= 10
+		if GlobalVar.gold <= 0:
+			GlobalVar.gold = 0
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "regen_stone":
-		#Gain Regen Stone trinket
+		InventoryData.item_data["Inv4"] = TrinketsData.item_data["Inv4"]
+		GlobalVar.regenStone = "Inv4"
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "monocle":
-		#Gain Monocle trinket
+		InventoryData.item_data["Inv1"] = TrinketsData.item_data["Inv1"]
+		GlobalVar.monocle = "Inv1"
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "stage_2_longer_plus_medium_heal":
-		#Stage gets longer by 2 scenes, 30% heal on all party members
+		GlobalVar.choiceCap += 2
+		gain_hp(30)
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "party_poison_plus_party_fullpp":
-		#Refills all PP and inflicts poison on all party members for the next fight
+		GlobalVar.partypoison = true
+		gain_PP()
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "drain_pp_plus_party_weak":
-		#Drains 50% PP (rounded up) and inflicts weak on the party in the next combat
+		drain_PP()
+		GlobalVar.partyweak = true
 		get_tree().change_scene(next_scene)
 	elif EventData.event_data[str(n)]["choices"][which_choice]["outcome"] == "old_tome_plus_fight_start":
-		#Gain Old Tome Trinket and start a fight
-		get_tree().change_scene(next_scene)
+		InventoryData.item_data["Inv6"] = TrinketsData.item_data["Inv6"]
+		GlobalVar.oldTome = "Inv6"
+		GuiMusic.stop_music()
+		get_tree().change_scene(fight_start)
 	else:
 		get_tree().change_scene(next_scene)
